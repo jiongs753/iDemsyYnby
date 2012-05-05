@@ -1,8 +1,8 @@
 //
 //  DemsyAppDelegate.h
-//  iDemsyYnby
+//  demsy
 //
-//  Created by yongshan ji on 12-5-5.
+//  Created by yongshan ji on 12-4-20.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
@@ -10,6 +10,6 @@
 
 @interface DemsyAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) IBOutlet UIWindow *window;
 
 @end

@@ -1,8 +1,8 @@
 //
 //  DemsyAppDelegate.m
-//  iDemsyYnby
+//  demsy
 //
-//  Created by yongshan ji on 12-5-5.
+//  Created by yongshan ji on 12-4-20.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
@@ -20,7 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    // 无需初始化window: 在 MainWindow.xib 中添加 DemsyAppDelegate 类, 并连接 window
+    // self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

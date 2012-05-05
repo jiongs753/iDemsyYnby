@@ -1,8 +1,8 @@
 //
 //  main.m
-//  iDemsyYnby
+//  demsyios
 //
-//  Created by yongshan ji on 12-5-5.
+//  Created by yongshan ji on 12-4-27.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
@@ -13,6 +13,6 @@
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([DemsyAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, nil);
     }
 }
