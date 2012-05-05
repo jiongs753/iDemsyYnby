@@ -1,0 +1,262 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE9B2DA5155524D1005ABB10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9B2DA4155524D1005ABB10 /* UIKit.framework */; };
+		AE9B2DA7155524D1005ABB10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9B2DA6155524D1005ABB10 /* Foundation.framework */; };
+		AE9B2DA9155524D1005ABB10 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9B2DA8155524D1005ABB10 /* CoreGraphics.framework */; };
+		AE9B2DAF155524D1005ABB10 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE9B2DAD155524D1005ABB10 /* InfoPlist.strings */; };
+		AE9B2DB1155524D1005ABB10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9B2DB0155524D1005ABB10 /* main.m */; };
+		AE9B2DB5155524D1005ABB10 /* DemsyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9B2DB4155524D1005ABB10 /* DemsyAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AE9B2DA0155524D1005ABB10 /* iDemsyYnby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDemsyYnby.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE9B2DA4155524D1005ABB10 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AE9B2DA6155524D1005ABB10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AE9B2DA8155524D1005ABB10 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AE9B2DAC155524D1005ABB10 /* iDemsyYnby-Info.plist */ = {isa = PBXFileReference; path = "iDemsyYnby-Info.plist"; sourceTree = "<group>"; };
+		AE9B2DAE155524D1005ABB10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AE9B2DB0155524D1005ABB10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AE9B2DB2155524D1005ABB10 /* iDemsyYnby-Prefix.pch */ = {isa = PBXFileReference; path = "iDemsyYnby-Prefix.pch"; sourceTree = "<group>"; };
+		AE9B2DB3155524D1005ABB10 /* DemsyAppDelegate.h */ = {isa = PBXFileReference; path = DemsyAppDelegate.h; sourceTree = "<group>"; };
+		AE9B2DB4155524D1005ABB10 /* DemsyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemsyAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE9B2D9D155524D1005ABB10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE9B2DA5155524D1005ABB10 /* UIKit.framework in Frameworks */,
+				AE9B2DA7155524D1005ABB10 /* Foundation.framework in Frameworks */,
+				AE9B2DA9155524D1005ABB10 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE9B2D95155524D1005ABB10 = {
+			isa = PBXGroup;
+			children = (
+				AE9B2DAA155524D1005ABB10 /* iDemsyYnby */,
+				AE9B2DA3155524D1005ABB10 /* Frameworks */,
+				AE9B2DA1155524D1005ABB10 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AE9B2DA1155524D1005ABB10 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE9B2DA0155524D1005ABB10 /* iDemsyYnby.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE9B2DA3155524D1005ABB10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE9B2DA4155524D1005ABB10 /* UIKit.framework */,
+				AE9B2DA6155524D1005ABB10 /* Foundation.framework */,
+				AE9B2DA8155524D1005ABB10 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE9B2DAA155524D1005ABB10 /* iDemsyYnby */ = {
+			isa = PBXGroup;
+			children = (
+				AE9B2DB3155524D1005ABB10 /* DemsyAppDelegate.h */,
+				AE9B2DB4155524D1005ABB10 /* DemsyAppDelegate.m */,
+				AE9B2DAB155524D1005ABB10 /* Supporting Files */,
+			);
+			path = iDemsyYnby;
+			sourceTree = "<group>";
+		};
+		AE9B2DAB155524D1005ABB10 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE9B2DAC155524D1005ABB10 /* iDemsyYnby-Info.plist */,
+				AE9B2DAD155524D1005ABB10 /* InfoPlist.strings */,
+				AE9B2DB0155524D1005ABB10 /* main.m */,
+				AE9B2DB2155524D1005ABB10 /* iDemsyYnby-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE9B2D9F155524D1005ABB10 /* iDemsyYnby */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE9B2DB8155524D1005ABB10 /* Build configuration list for PBXNativeTarget "iDemsyYnby" */;
+			buildPhases = (
+				AE9B2D9C155524D1005ABB10 /* Sources */,
+				AE9B2D9D155524D1005ABB10 /* Frameworks */,
+				AE9B2D9E155524D1005ABB10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iDemsyYnby;
+			productName = iDemsyYnby;
+			productReference = AE9B2DA0155524D1005ABB10 /* iDemsyYnby.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE9B2D97155524D1005ABB10 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Demsy;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = AE9B2D9A155524D1005ABB10 /* Build configuration list for PBXProject "iDemsyYnby" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AE9B2D95155524D1005ABB10;
+			productRefGroup = AE9B2DA1155524D1005ABB10 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE9B2D9F155524D1005ABB10 /* iDemsyYnby */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE9B2D9E155524D1005ABB10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE9B2DAF155524D1005ABB10 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE9B2D9C155524D1005ABB10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE9B2DB1155524D1005ABB10 /* main.m in Sources */,
+				AE9B2DB5155524D1005ABB10 /* DemsyAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AE9B2DAD155524D1005ABB10 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE9B2DAE155524D1005ABB10 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AE9B2DB6155524D1005ABB10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AE9B2DB7155524D1005ABB10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AE9B2DB9155524D1005ABB10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iDemsyYnby/iDemsyYnby-Prefix.pch";
+				INFOPLIST_FILE = "iDemsyYnby/iDemsyYnby-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AE9B2DBA155524D1005ABB10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iDemsyYnby/iDemsyYnby-Prefix.pch";
+				INFOPLIST_FILE = "iDemsyYnby/iDemsyYnby-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE9B2D9A155524D1005ABB10 /* Build configuration list for PBXProject "iDemsyYnby" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE9B2DB6155524D1005ABB10 /* Debug */,
+				AE9B2DB7155524D1005ABB10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE9B2DB8155524D1005ABB10 /* Build configuration list for PBXNativeTarget "iDemsyYnby" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE9B2DB9155524D1005ABB10 /* Debug */,
+				AE9B2DBA155524D1005ABB10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE9B2D97155524D1005ABB10 /* Project object */;
+}
