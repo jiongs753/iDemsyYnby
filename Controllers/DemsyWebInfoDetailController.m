@@ -9,10 +9,6 @@
 #import "DemsyWebInfoDetailController.h"
 #import "DemsyUtils.h"
 
-@interface DemsyWebInfoDetailController ()
-
-@end
-
 @implementation DemsyWebInfoDetailController
 
 @synthesize dataModel;

@@ -1,24 +1,23 @@
 //
-//  NewsViewController.m
-//  demsy
+//  DemsyProductTableController.m
+//  iDemsyYnby
 //
-//  Created by yongshan ji on 12-4-23.
+//  Created by yongshan ji on 12-5-7.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "DemsyWebInfoTableController.h"
-#import "DemsyWebInfoDetailController.h"
+#import "DemsyProductTableController.h"
+#import "DemsyProductDetailController.h"
 #import "DemsyUtils.h"
 #import "DemsyAsyncImageView.h"
 
-@interface DemsyWebInfoTableController ()
 
-@end
-
-@implementation DemsyWebInfoTableController
+@implementation DemsyProductTableController
 
 @synthesize tableView=_tableView;
 @synthesize tableViewCell;
+@synthesize toolbar;
+
 @synthesize tableData;
 
 @synthesize detailController;
@@ -26,18 +25,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"新闻";
+    self.title = @"产品";
+    
+    // add product catalog button
+    //UIBarButtonItem *catalogButton = [[UIBarButtonItem alloc] initWithTitle:@"分类" style:UIBarButtonItemStyleBordered target:self action:@selector(loadProductCatalog)];
+    //self.navigationItem.rightBarButtonItem = catalogButton;
+    //[catalogButton release];
+    
     
     // 加载缓存数据
     NSString *documentsDirectory =[NSHomeDirectory()stringByAppendingPathComponent:@"Documents"];
-    NSString* path = [NSString stringWithFormat:@"%@/%@",documentsDirectory,@"webinfodata.plist"]; 
-
+    NSString* path = [NSString stringWithFormat:@"%@/%@",documentsDirectory,@"product.plist"]; 
+    
     NSArray *array = [[NSMutableArray alloc] initWithContentsOfFile:path];
     self.tableData = array;
     [array release];
-
+    
     // 异步加载最新数据
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%s",DEMSY_URL_WEBINFO_PLIST]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%s",DEMSY_URL_PRODUCT_PLIST]];
     [self loadDataFromUrl:url];    
 }
 
@@ -73,19 +78,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"WebInfoCell";
+    static NSString *CellIdentifier = @"ProductCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if(cell == nil){
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DemsyWebInfoTableCell" owner:self options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DemsyProductTableCell" owner:self options:nil];
         if([nib count] > 0){
             cell = self.tableViewCell;
         }else{
-            NSLog(@"failed to load DemsyWebInfoTableCell nib file!");
+            NSLog(@"failed to load DemsyTableCell_1 nib file!");
         }
     }
-    	
-    DemsyWebInfo *dataModel = [self dataModelForRow:[indexPath row]];
-        
+    
+    DemsyProduct *dataModel = [self dataModelForRow:[indexPath row]];
+    
     UILabel *titleLabel = (UILabel *)[tableViewCell viewWithTag:1];
     titleLabel.text = [dataModel title];
     
@@ -98,7 +103,7 @@
     asyncImage.imageView = imageView;
     NSURL *url = [DemsyUtils url:dataModel.image];
     [asyncImage loadImageFromURL:url];
-        
+    
     return cell;
 }
 
@@ -111,7 +116,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {    
     if(detailController == nil){
-        DemsyWebInfoDetailController *controller = [[DemsyWebInfoDetailController alloc] initWithNibName:@"DemsyWebInfoDetailView" bundle:nil];
+        DemsyProductDetailController *controller = [[DemsyProductDetailController alloc] initWithNibName:@"DemsyProductDetailView" bundle:nil];
         
         self.detailController = controller;
         
@@ -120,7 +125,7 @@
     
     [self.navigationController pushViewController:detailController animated:YES];
     
-    DemsyWebInfo *model = [self dataModelForRow:[indexPath row]];
+    DemsyProduct *model = [self dataModelForRow:[indexPath row]];
     detailController.dataModel = model;
     detailController.title = [model title];
     [detailController.webView clearsContextBeforeDrawing];
@@ -129,9 +134,9 @@
 }
 
 #pragma inner methods
-- (DemsyWebInfo *) dataModelForRow: (NSInteger) row
+- (DemsyProduct *) dataModelForRow: (NSInteger) row
 {
-    DemsyWebInfo *model = [[[DemsyWebInfo alloc] init] autorelease];
+    DemsyProduct *model = [[[DemsyProduct alloc] init] autorelease];
     
     NSDictionary *dic = (NSDictionary *)[tableData objectAtIndex:row];
     model.ID = [dic objectForKey:@"id"];
@@ -147,7 +152,7 @@
 
 - (void)processData{
     NSString *documentsDirectory =[NSHomeDirectory()stringByAppendingPathComponent:@"Documents"];
-    NSString* path = [NSString stringWithFormat:@"%@/%@",documentsDirectory,@"webinfodata.plist"]; 
+    NSString* path = [NSString stringWithFormat:@"%@/%@",documentsDirectory,@"product.plist"]; 
     
     [self.asynLoadedData writeToFile:path atomically:TRUE];
     NSArray *array = [[NSMutableArray alloc] initWithContentsOfFile:path];
@@ -155,6 +160,10 @@
     [array release];
     
     [_tableView reloadData];
+}
+
+- (void) loadProductCatalog{
+    [self.toolbar setHidden:FALSE];
 }
 
 @end

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE842E261557BD8E00BBE1DC /* DemsyProductRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE842E251557BD8E00BBE1DC /* DemsyProductRootView.xib */; };
+		AE842E291557BDAB00BBE1DC /* DemsyProductTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE842E281557BDAB00BBE1DC /* DemsyProductTableView.xib */; };
+		AE842E2B1557BDC200BBE1DC /* DemsyProductDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE842E2A1557BDC200BBE1DC /* DemsyProductDetailView.xib */; };
+		AE842E2E1557BDEB00BBE1DC /* DemsyProductRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE842E2D1557BDEB00BBE1DC /* DemsyProductRootController.m */; };
+		AE842E311557BDFC00BBE1DC /* DemsyProductTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE842E301557BDFC00BBE1DC /* DemsyProductTableController.m */; };
+		AE842E341557BE0C00BBE1DC /* DemsyProductDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE842E331557BE0C00BBE1DC /* DemsyProductDetailController.m */; };
+		AE842E3A1557BF7F00BBE1DC /* DemsyProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = AE842E391557BF7F00BBE1DC /* DemsyProduct.m */; };
+		AE842E3C1557CA4100BBE1DC /* DemsyProductTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE842E3B1557CA4100BBE1DC /* DemsyProductTableCell.xib */; };
 		AE9B2DA5155524D1005ABB10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9B2DA4155524D1005ABB10 /* UIKit.framework */; };
 		AE9B2DA7155524D1005ABB10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9B2DA6155524D1005ABB10 /* Foundation.framework */; };
 		AE9B2DA9155524D1005ABB10 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9B2DA8155524D1005ABB10 /* CoreGraphics.framework */; };
@@ -41,6 +49,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE842E251557BD8E00BBE1DC /* DemsyProductRootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyProductRootView.xib; sourceTree = "<group>"; };
+		AE842E281557BDAB00BBE1DC /* DemsyProductTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyProductTableView.xib; sourceTree = "<group>"; };
+		AE842E2A1557BDC200BBE1DC /* DemsyProductDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyProductDetailView.xib; sourceTree = "<group>"; };
+		AE842E2C1557BDEB00BBE1DC /* DemsyProductRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyProductRootController.h; sourceTree = "<group>"; };
+		AE842E2D1557BDEB00BBE1DC /* DemsyProductRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyProductRootController.m; sourceTree = "<group>"; };
+		AE842E2F1557BDFC00BBE1DC /* DemsyProductTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyProductTableController.h; sourceTree = "<group>"; };
+		AE842E301557BDFC00BBE1DC /* DemsyProductTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyProductTableController.m; sourceTree = "<group>"; };
+		AE842E321557BE0C00BBE1DC /* DemsyProductDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyProductDetailController.h; sourceTree = "<group>"; };
+		AE842E331557BE0C00BBE1DC /* DemsyProductDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyProductDetailController.m; sourceTree = "<group>"; };
+		AE842E381557BF7F00BBE1DC /* DemsyProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyProduct.h; sourceTree = "<group>"; };
+		AE842E391557BF7F00BBE1DC /* DemsyProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyProduct.m; sourceTree = "<group>"; };
+		AE842E3B1557CA4100BBE1DC /* DemsyProductTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyProductTableCell.xib; sourceTree = "<group>"; };
 		AE9B2DA0155524D1005ABB10 /* iDemsyYnby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDemsyYnby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE9B2DA4155524D1005ABB10 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AE9B2DA6155524D1005ABB10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -168,6 +188,12 @@
 			children = (
 				AE9B2DC115552501005ABB10 /* DemsyAsynURLController.h */,
 				AE9B2DC215552501005ABB10 /* DemsyAsynURLController.m */,
+				AE842E321557BE0C00BBE1DC /* DemsyProductDetailController.h */,
+				AE842E331557BE0C00BBE1DC /* DemsyProductDetailController.m */,
+				AE842E2C1557BDEB00BBE1DC /* DemsyProductRootController.h */,
+				AE842E2D1557BDEB00BBE1DC /* DemsyProductRootController.m */,
+				AE842E2F1557BDFC00BBE1DC /* DemsyProductTableController.h */,
+				AE842E301557BDFC00BBE1DC /* DemsyProductTableController.m */,
 				AE9B2DC315552501005ABB10 /* DemsyWebInfoDetailController.h */,
 				AE9B2DC415552501005ABB10 /* DemsyWebInfoDetailController.m */,
 				AE9B2DC515552501005ABB10 /* DemsyWebInfoRootController.h */,
@@ -181,6 +207,8 @@
 		AE9B2DC915552501005ABB10 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AE842E381557BF7F00BBE1DC /* DemsyProduct.h */,
+				AE842E391557BF7F00BBE1DC /* DemsyProduct.m */,
 				AE9B2DCA15552501005ABB10 /* DemsyWebInfo.h */,
 				AE9B2DCB15552501005ABB10 /* DemsyWebInfo.m */,
 			);
@@ -211,6 +239,10 @@
 			isa = PBXGroup;
 			children = (
 				AE9B2DDB15552501005ABB10 /* DemsyMainWindow.xib */,
+				AE842E2A1557BDC200BBE1DC /* DemsyProductDetailView.xib */,
+				AE842E251557BD8E00BBE1DC /* DemsyProductRootView.xib */,
+				AE842E3B1557CA4100BBE1DC /* DemsyProductTableCell.xib */,
+				AE842E281557BDAB00BBE1DC /* DemsyProductTableView.xib */,
 				AE9B2DDC15552501005ABB10 /* DemsyWebInfoDetailView.xib */,
 				AE9B2DDD15552501005ABB10 /* DemsyWebInfoRootView.xib */,
 				AE9B2DDE15552501005ABB10 /* DemsyWebInfoTableCell.xib */,
@@ -289,6 +321,10 @@
 				AE9B2DF615552501005ABB10 /* DemsyWebInfoRootView.xib in Resources */,
 				AE9B2DF715552501005ABB10 /* DemsyWebInfoTableCell.xib in Resources */,
 				AE9B2DF815552501005ABB10 /* DemsyWebInfoTableView.xib in Resources */,
+				AE842E261557BD8E00BBE1DC /* DemsyProductRootView.xib in Resources */,
+				AE842E291557BDAB00BBE1DC /* DemsyProductTableView.xib in Resources */,
+				AE842E2B1557BDC200BBE1DC /* DemsyProductDetailView.xib in Resources */,
+				AE842E3C1557CA4100BBE1DC /* DemsyProductTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +344,10 @@
 				AE9B2DE415552501005ABB10 /* DemsyWebInfoRootController.m in Sources */,
 				AE9B2DE515552501005ABB10 /* DemsyWebInfoTableController.m in Sources */,
 				AE9B2DE615552501005ABB10 /* DemsyWebInfo.m in Sources */,
+				AE842E2E1557BDEB00BBE1DC /* DemsyProductRootController.m in Sources */,
+				AE842E311557BDFC00BBE1DC /* DemsyProductTableController.m in Sources */,
+				AE842E341557BE0C00BBE1DC /* DemsyProductDetailController.m in Sources */,
+				AE842E3A1557BF7F00BBE1DC /* DemsyProduct.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +449,7 @@
 				AE9B2DBA155524D1005ABB10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
