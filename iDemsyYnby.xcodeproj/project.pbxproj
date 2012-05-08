@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE172256155945CA0055A83D /* DemsyBbsRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE172255155945CA0055A83D /* DemsyBbsRootView.xib */; };
+		AE172259155945DE0055A83D /* DemsyBbsTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE172258155945DE0055A83D /* DemsyBbsTableView.xib */; };
+		AE17225B155945F10055A83D /* DemsyBbsReplyTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE17225A155945F10055A83D /* DemsyBbsReplyTableView.xib */; };
+		AE17225E155946410055A83D /* DemsyBbsRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE17225D155946410055A83D /* DemsyBbsRootController.m */; };
+		AE172261155946B50055A83D /* DemsyBbsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE172260155946B50055A83D /* DemsyBbsTableController.m */; };
+		AE1722641559470B0055A83D /* DemsyBbsReplyTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1722631559470B0055A83D /* DemsyBbsReplyTableController.m */; };
+		AE1722671559473E0055A83D /* DemsyBbs.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1722661559473E0055A83D /* DemsyBbs.m */; };
+		AE17226915594BB40055A83D /* DemsyBbsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE17226815594BB40055A83D /* DemsyBbsTableCell.xib */; };
+		AE17226B15594CF20055A83D /* DemsyOfficeRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE17226A15594CF20055A83D /* DemsyOfficeRootView.xib */; };
+		AE17226D15595B500055A83D /* DemsyMoreRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE17226C15595B500055A83D /* DemsyMoreRootView.xib */; };
 		AE83F1941558F14600C83433 /* DemsyTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE83F1931558F14600C83433 /* DemsyTableController.m */; };
 		AE842E261557BD8E00BBE1DC /* DemsyProductRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE842E251557BD8E00BBE1DC /* DemsyProductRootView.xib */; };
 		AE842E291557BDAB00BBE1DC /* DemsyProductTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE842E281557BDAB00BBE1DC /* DemsyProductTableView.xib */; };
@@ -50,6 +60,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE172255155945CA0055A83D /* DemsyBbsRootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyBbsRootView.xib; sourceTree = "<group>"; };
+		AE172258155945DE0055A83D /* DemsyBbsTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyBbsTableView.xib; sourceTree = "<group>"; };
+		AE17225A155945F10055A83D /* DemsyBbsReplyTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyBbsReplyTableView.xib; sourceTree = "<group>"; };
+		AE17225C155946410055A83D /* DemsyBbsRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyBbsRootController.h; sourceTree = "<group>"; };
+		AE17225D155946410055A83D /* DemsyBbsRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyBbsRootController.m; sourceTree = "<group>"; };
+		AE17225F155946B50055A83D /* DemsyBbsTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyBbsTableController.h; sourceTree = "<group>"; };
+		AE172260155946B50055A83D /* DemsyBbsTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyBbsTableController.m; sourceTree = "<group>"; };
+		AE1722621559470B0055A83D /* DemsyBbsReplyTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyBbsReplyTableController.h; sourceTree = "<group>"; };
+		AE1722631559470B0055A83D /* DemsyBbsReplyTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyBbsReplyTableController.m; sourceTree = "<group>"; };
+		AE1722651559473E0055A83D /* DemsyBbs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyBbs.h; sourceTree = "<group>"; };
+		AE1722661559473E0055A83D /* DemsyBbs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyBbs.m; sourceTree = "<group>"; };
+		AE17226815594BB40055A83D /* DemsyBbsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyBbsTableCell.xib; sourceTree = "<group>"; };
+		AE17226A15594CF20055A83D /* DemsyOfficeRootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyOfficeRootView.xib; sourceTree = "<group>"; };
+		AE17226C15595B500055A83D /* DemsyMoreRootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyMoreRootView.xib; sourceTree = "<group>"; };
 		AE83F1921558F14600C83433 /* DemsyTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyTableController.h; sourceTree = "<group>"; };
 		AE83F1931558F14600C83433 /* DemsyTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyTableController.m; sourceTree = "<group>"; };
 		AE842E251557BD8E00BBE1DC /* DemsyProductRootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyProductRootView.xib; sourceTree = "<group>"; };
@@ -68,10 +92,10 @@
 		AE9B2DA4155524D1005ABB10 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AE9B2DA6155524D1005ABB10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AE9B2DA8155524D1005ABB10 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		AE9B2DAC155524D1005ABB10 /* iDemsyYnby-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iDemsyYnby-Info.plist"; sourceTree = "<group>"; };
+		AE9B2DAC155524D1005ABB10 /* iDemsyYnby-Info.plist */ = {isa = PBXFileReference; path = "iDemsyYnby-Info.plist"; sourceTree = "<group>"; };
 		AE9B2DAE155524D1005ABB10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AE9B2DB0155524D1005ABB10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AE9B2DB2155524D1005ABB10 /* iDemsyYnby-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iDemsyYnby-Prefix.pch"; sourceTree = "<group>"; };
+		AE9B2DB2155524D1005ABB10 /* iDemsyYnby-Prefix.pch */ = {isa = PBXFileReference; path = "iDemsyYnby-Prefix.pch"; sourceTree = "<group>"; };
 		AE9B2DB3155524D1005ABB10 /* DemsyAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemsyAppDelegate.h; sourceTree = "<group>"; };
 		AE9B2DB4155524D1005ABB10 /* DemsyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemsyAppDelegate.m; sourceTree = "<group>"; };
 		AE9B2DBC15552501005ABB10 /* DemsyAsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyAsyncImageView.h; sourceTree = "<group>"; };
@@ -191,6 +215,12 @@
 			children = (
 				AE9B2DC115552501005ABB10 /* DemsyAsynURLController.h */,
 				AE9B2DC215552501005ABB10 /* DemsyAsynURLController.m */,
+				AE1722621559470B0055A83D /* DemsyBbsReplyTableController.h */,
+				AE1722631559470B0055A83D /* DemsyBbsReplyTableController.m */,
+				AE17225C155946410055A83D /* DemsyBbsRootController.h */,
+				AE17225D155946410055A83D /* DemsyBbsRootController.m */,
+				AE17225F155946B50055A83D /* DemsyBbsTableController.h */,
+				AE172260155946B50055A83D /* DemsyBbsTableController.m */,
 				AE842E321557BE0C00BBE1DC /* DemsyProductDetailController.h */,
 				AE842E331557BE0C00BBE1DC /* DemsyProductDetailController.m */,
 				AE842E2C1557BDEB00BBE1DC /* DemsyProductRootController.h */,
@@ -216,6 +246,8 @@
 				AE842E391557BF7F00BBE1DC /* DemsyProduct.m */,
 				AE9B2DCA15552501005ABB10 /* DemsyWebInfo.h */,
 				AE9B2DCB15552501005ABB10 /* DemsyWebInfo.m */,
+				AE1722651559473E0055A83D /* DemsyBbs.h */,
+				AE1722661559473E0055A83D /* DemsyBbs.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -243,6 +275,10 @@
 		AE9B2DDA15552501005ABB10 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AE17225A155945F10055A83D /* DemsyBbsReplyTableView.xib */,
+				AE172255155945CA0055A83D /* DemsyBbsRootView.xib */,
+				AE17226815594BB40055A83D /* DemsyBbsTableCell.xib */,
+				AE172258155945DE0055A83D /* DemsyBbsTableView.xib */,
 				AE9B2DDB15552501005ABB10 /* DemsyMainWindow.xib */,
 				AE842E2A1557BDC200BBE1DC /* DemsyProductDetailView.xib */,
 				AE842E251557BD8E00BBE1DC /* DemsyProductRootView.xib */,
@@ -252,6 +288,8 @@
 				AE9B2DDD15552501005ABB10 /* DemsyWebInfoRootView.xib */,
 				AE9B2DDE15552501005ABB10 /* DemsyWebInfoTableCell.xib */,
 				AE9B2DDF15552501005ABB10 /* DemsyWebInfoTableView.xib */,
+				AE17226A15594CF20055A83D /* DemsyOfficeRootView.xib */,
+				AE17226C15595B500055A83D /* DemsyMoreRootView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -330,6 +368,12 @@
 				AE842E291557BDAB00BBE1DC /* DemsyProductTableView.xib in Resources */,
 				AE842E2B1557BDC200BBE1DC /* DemsyProductDetailView.xib in Resources */,
 				AE842E3C1557CA4100BBE1DC /* DemsyProductTableCell.xib in Resources */,
+				AE172256155945CA0055A83D /* DemsyBbsRootView.xib in Resources */,
+				AE172259155945DE0055A83D /* DemsyBbsTableView.xib in Resources */,
+				AE17225B155945F10055A83D /* DemsyBbsReplyTableView.xib in Resources */,
+				AE17226915594BB40055A83D /* DemsyBbsTableCell.xib in Resources */,
+				AE17226B15594CF20055A83D /* DemsyOfficeRootView.xib in Resources */,
+				AE17226D15595B500055A83D /* DemsyMoreRootView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +398,10 @@
 				AE842E341557BE0C00BBE1DC /* DemsyProductDetailController.m in Sources */,
 				AE842E3A1557BF7F00BBE1DC /* DemsyProduct.m in Sources */,
 				AE83F1941558F14600C83433 /* DemsyTableController.m in Sources */,
+				AE17225E155946410055A83D /* DemsyBbsRootController.m in Sources */,
+				AE172261155946B50055A83D /* DemsyBbsTableController.m in Sources */,
+				AE1722641559470B0055A83D /* DemsyBbsReplyTableController.m in Sources */,
+				AE1722671559473E0055A83D /* DemsyBbs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +468,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iDemsyYnby/iDemsyYnby-Prefix.pch";
 				INFOPLIST_FILE = "iDemsyYnby/iDemsyYnby-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = iDemsyYnby;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -431,7 +480,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iDemsyYnby/iDemsyYnby-Prefix.pch";
 				INFOPLIST_FILE = "iDemsyYnby/iDemsyYnby-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = iDemsyYnby;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
