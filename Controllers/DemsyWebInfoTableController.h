@@ -14,7 +14,10 @@
 @interface DemsyWebInfoTableController: DemsyAsynURLController<UITableViewDelegate,UITableViewDataSource>
 
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
-@property (retain, nonatomic) IBOutlet UITableViewCell *tableViewCell;@property (retain, nonatomic) NSArray *tableData;
+@property (retain, nonatomic) IBOutlet UITableViewCell *tableViewCell;
+@property NSInteger totalRecords;
+@property NSInteger pageIndex;
+@property (retain, nonatomic) NSMutableArray *dataRows;
 
 @property (retain, nonatomic) DemsyWebInfoDetailController *detailController;
 

@@ -17,7 +17,7 @@
 @property (retain, nonatomic) IBOutlet UITableViewCell *tableViewCell;
 @property (retain, nonatomic) IBOutlet UIToolbar *toolbar;
 
-@property (retain, nonatomic) NSArray *tableData;
+@property (retain, nonatomic) NSDictionary *pageData;
 
 @property (retain, nonatomic) DemsyProductDetailController *detailController;
 

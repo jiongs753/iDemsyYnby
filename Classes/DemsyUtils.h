@@ -12,16 +12,18 @@
 #ifndef DEMSY_CONSTS
 #define DEMSY_CONSTS
 
+#define DEMSY_PAGE_SIZE 20
+
 //网站服务器地址 192.168.1.10:9090
 #define DEMSY_WEB_SERVER "http://192.168.1.10:9090"
 
-// web info list url, suffix: /imageWidth/imageHeight
+// web info list url, suffix: /imageWidth/imageHeight/pageIndex
 #define DEMSY_URL_WEBINFO_PLIST "http://192.168.1.10:9090/ui/iphone/plistWebInfo/70/55"
 
 // web info detail url, suffix: /webInfoID
 #define DEMSY_URL_WEBINFO_DETAIL "http://192.168.1.10:9090/ui/iphone/detailWebInfo"
 
-// product list url, suffix: /imageWidth/imageHeight
+// product list url, suffix: /imageWidth/imageHeight/pageIndex
 #define DEMSY_URL_PRODUCT_PLIST "http://192.168.1.10:9090/ui/iphone/plistProduct/50/55"
 
 // product detail url, suffix: /productID

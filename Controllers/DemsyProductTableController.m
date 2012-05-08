@@ -18,15 +18,14 @@
 @synthesize tableViewCell;
 @synthesize toolbar;
 
-@synthesize tableData;
+@synthesize pageData;
 
 @synthesize detailController;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"产品";
-    
+    self.title = @"产品";    
     // add product catalog button
     //UIBarButtonItem *catalogButton = [[UIBarButtonItem alloc] initWithTitle:@"分类" style:UIBarButtonItemStyleBordered target:self action:@selector(loadProductCatalog)];
     //self.navigationItem.rightBarButtonItem = catalogButton;
@@ -34,12 +33,7 @@
     
     
     // 加载缓存数据
-    NSString *documentsDirectory =[NSHomeDirectory()stringByAppendingPathComponent:@"Documents"];
-    NSString* path = [NSString stringWithFormat:@"%@/%@",documentsDirectory,@"product.plist"]; 
-    
-    NSArray *array = [[NSMutableArray alloc] initWithContentsOfFile:path];
-    self.tableData = array;
-    [array release];
+    [self reloadData];
     
     // 异步加载最新数据
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%s",DEMSY_URL_PRODUCT_PLIST]];
@@ -52,7 +46,7 @@
     
     self.tableView = nil;
     self.tableViewCell = nil;
-    self.tableData = nil;
+    self.pageData = nil;
     self.detailController = nil;}
 
 - (void)dealloc
@@ -61,7 +55,7 @@
     
     [_tableView release];
     [tableViewCell release];
-    [tableData release];
+    [pageData release];
     [detailController release];}
 
 #pragma mark - Table view data source
@@ -73,7 +67,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [tableData count];
+    NSString *ret = (NSString *)[pageData objectForKey:@"totalRecords"];
+    return [ret integerValue];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -85,7 +80,7 @@
         if([nib count] > 0){
             cell = self.tableViewCell;
         }else{
-            NSLog(@"failed to load DemsyTableCell_1 nib file!");
+            NSLog(@"failed to load DemsyProductTableCell nib file!");
         }
     }
     
@@ -138,32 +133,43 @@
 {
     DemsyProduct *model = [[[DemsyProduct alloc] init] autorelease];
     
-    NSDictionary *dic = (NSDictionary *)[tableData objectAtIndex:row];
-    model.ID = [dic objectForKey:@"id"];
-    model.commentCount = [dic objectForKey: @"comment-count"];
-    model.image = [dic objectForKey:@"image"];
-    model.title = [dic objectForKey:@"title"];
-    model.summary = [dic objectForKey:@"summary"];
-    model.updated = [dic objectForKey:@"updated"];
-    model.content = [dic objectForKey:@"content"];
+    NSArray *dataRows = (NSArray *)[pageData objectForKey:@"rows"];
+    NSDictionary *dataRow = (NSDictionary *)[dataRows objectAtIndex:row];
+    model.ID = [dataRow objectForKey:@"id"];
+    model.commentCount = [dataRow objectForKey: @"comment-count"];
+    model.image = [dataRow objectForKey:@"image"];
+    model.title = [dataRow objectForKey:@"title"];
+    model.summary = [dataRow objectForKey:@"summary"];
+    model.updated = [dataRow objectForKey:@"updated"];
+    model.content = [dataRow objectForKey:@"content"];
     
     return model;
 }
 
-- (void)processData{
+- (NSString *) cachedFile{
     NSString *documentsDirectory =[NSHomeDirectory()stringByAppendingPathComponent:@"Documents"];
-    NSString* path = [NSString stringWithFormat:@"%@/%@",documentsDirectory,@"product.plist"]; 
+    NSString* path = [NSString stringWithFormat:@"%@/%@",documentsDirectory,@"product.plist"];
+
+    return path;
+}
+
+- (void)processData{ 
     
-    [self.asynLoadedData writeToFile:path atomically:TRUE];
-    NSArray *array = [[NSMutableArray alloc] initWithContentsOfFile:path];
-    self.tableData = array;
-    [array release];
+    [self.asynLoadedData writeToFile:[self cachedFile] atomically:TRUE];
+    
+    [self reloadData];
     
     [_tableView reloadData];
 }
 
+- (void) reloadData{
+    NSDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:[self cachedFile]];
+    self.pageData = dic;
+    [dic release];
+
+}
+
 - (void) loadProductCatalog{
-    [self.toolbar setHidden:FALSE];
 }
 
 @end

@@ -19,7 +19,9 @@
 
 @synthesize tableView=_tableView;
 @synthesize tableViewCell;
-@synthesize tableData;
+@synthesize totalRecords;
+@synthesize pageIndex;
+@synthesize dataRows;
 
 @synthesize detailController;
 
@@ -29,15 +31,10 @@
     self.title = @"新闻";
     
     // 加载缓存数据
-    NSString *documentsDirectory =[NSHomeDirectory()stringByAppendingPathComponent:@"Documents"];
-    NSString* path = [NSString stringWithFormat:@"%@/%@",documentsDirectory,@"webinfodata.plist"]; 
-
-    NSArray *array = [[NSMutableArray alloc] initWithContentsOfFile:path];
-    self.tableData = array;
-    [array release];
-
+    [self reloadData];
+    
     // 异步加载最新数据
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%s",DEMSY_URL_WEBINFO_PLIST]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%s/%d",DEMSY_URL_WEBINFO_PLIST,1]];
     [self loadDataFromUrl:url];    
 }
 
@@ -47,7 +44,7 @@
     
     self.tableView = nil;
     self.tableViewCell = nil;
-    self.tableData = nil;
+    self.dataRows = nil;
     self.detailController = nil;}
 
 - (void)dealloc
@@ -56,7 +53,7 @@
     
     [_tableView release];
     [tableViewCell release];
-    [tableData release];
+    [dataRows release];
     [detailController release];}
 
 #pragma mark - Table view data source
@@ -68,7 +65,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [tableData count];
+    return totalRecords;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -85,6 +82,9 @@
     }
     	
     DemsyWebInfo *dataModel = [self dataModelForRow:[indexPath row]];
+    
+    if(dataModel == nil)
+        return nil;
         
     UILabel *titleLabel = (UILabel *)[tableViewCell viewWithTag:1];
     titleLabel.text = [dataModel title];
@@ -129,32 +129,68 @@
 }
 
 #pragma inner methods
+
+- (NSString *) cachedFile{
+    NSString *documentsDirectory =[NSHomeDirectory()stringByAppendingPathComponent:@"Documents"];
+    NSString* path = [NSString stringWithFormat:@"%@/%@",documentsDirectory,@"webinfodata.plist"];
+    
+    return path;
+}
+
 - (DemsyWebInfo *) dataModelForRow: (NSInteger) row
 {
     DemsyWebInfo *model = [[[DemsyWebInfo alloc] init] autorelease];
     
-    NSDictionary *dic = (NSDictionary *)[tableData objectAtIndex:row];
-    model.ID = [dic objectForKey:@"id"];
-    model.commentCount = [dic objectForKey: @"comment-count"];
-    model.image = [dic objectForKey:@"image"];
-    model.title = [dic objectForKey:@"title"];
-    model.summary = [dic objectForKey:@"summary"];
-    model.updated = [dic objectForKey:@"updated"];
-    model.content = [dic objectForKey:@"content"];
+    if ([dataRows count] <= row){
+        [self loadNextPage];
+    }
+    if ([dataRows count] <= row) {
+        return nil;
+    }
+    
+    NSDictionary *dataRow = (NSDictionary *)[dataRows objectAtIndex:row];
+    model.ID = [dataRow objectForKey:@"id"];
+    model.commentCount = [dataRow objectForKey: @"comment-count"];
+    model.image = [dataRow objectForKey:@"image"];
+    model.title = [dataRow objectForKey:@"title"];
+    model.summary = [dataRow objectForKey:@"summary"];
+    model.updated = [dataRow objectForKey:@"updated"];
+    model.content = [dataRow objectForKey:@"content"];
     
     return model;
 }
 
+
 - (void)processData{
-    NSString *documentsDirectory =[NSHomeDirectory()stringByAppendingPathComponent:@"Documents"];
-    NSString* path = [NSString stringWithFormat:@"%@/%@",documentsDirectory,@"webinfodata.plist"]; 
+    [self.asynLoadedData writeToFile:[self cachedFile] atomically:TRUE];
     
-    [self.asynLoadedData writeToFile:path atomically:TRUE];
-    NSArray *array = [[NSMutableArray alloc] initWithContentsOfFile:path];
-    self.tableData = array;
-    [array release];
-    
+    [self.dataRows removeAllObjects];
+    [self reloadData];
+
     [_tableView reloadData];
+}
+
+- (void) reloadData{
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:[self cachedFile]];
+    NSArray *rows = [dic objectForKey:@"rows"];
+    
+    [self.dataRows addObjectsFromArray:rows];
+    self.totalRecords = [[dic objectForKey: @"totalRecords"] integerValue];
+    self.pageIndex = [[dic objectForKey: @"pageIndex"] integerValue];
+    
+    [dic release];
+}
+
+- (void) loadNextPage{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%s/%d",DEMSY_URL_WEBINFO_PLIST, pageIndex+1]];
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfURL:url];
+    NSArray *rows = [dic objectForKey:@"rows"];
+    
+    
+    [self.dataRows addObjectsFromArray:rows];
+    self.totalRecords = [[dic objectForKey: @"totalRecords"] integerValue];
+    self.pageIndex = [[dic objectForKey: @"pageIndex"] integerValue];
+
 }
 
 @end
