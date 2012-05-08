@@ -8,16 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "DemsyProductDetailController.h"
-#import "DemsyAsynURLController.h"
+#import "DemsyTableController.h"
 #import "DemsyProduct.h"
 
-@interface DemsyProductTableController : DemsyAsynURLController<UITableViewDelegate,UITableViewDataSource>
-
-@property (retain, nonatomic) IBOutlet UITableView *tableView;
-@property (retain, nonatomic) IBOutlet UITableViewCell *tableViewCell;
-@property (retain, nonatomic) IBOutlet UIToolbar *toolbar;
-
-@property (retain, nonatomic) NSDictionary *pageData;
+@interface DemsyProductTableController : DemsyTableController<UITableViewDelegate,UITableViewDataSource>
 
 @property (retain, nonatomic) DemsyProductDetailController *detailController;
 

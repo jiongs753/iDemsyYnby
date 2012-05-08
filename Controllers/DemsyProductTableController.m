@@ -14,62 +14,35 @@
 
 @implementation DemsyProductTableController
 
-@synthesize tableView=_tableView;
-@synthesize tableViewCell;
-@synthesize toolbar;
-
-@synthesize pageData;
-
 @synthesize detailController;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"产品";    
+    
+    self.title = @"产品";
+    
     // add product catalog button
     //UIBarButtonItem *catalogButton = [[UIBarButtonItem alloc] initWithTitle:@"分类" style:UIBarButtonItemStyleBordered target:self action:@selector(loadProductCatalog)];
     //self.navigationItem.rightBarButtonItem = catalogButton;
     //[catalogButton release];
-    
-    
-    // 加载缓存数据
-    [self reloadData];
-    
-    // 异步加载最新数据
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%s",DEMSY_URL_PRODUCT_PLIST]];
-    [self loadDataFromUrl:url];    
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     
-    self.tableView = nil;
-    self.tableViewCell = nil;
-    self.pageData = nil;
-    self.detailController = nil;}
+    self.detailController = nil;
+}
 
 - (void)dealloc
 {
     [super dealloc];
     
-    [_tableView release];
-    [tableViewCell release];
-    [pageData release];
-    [detailController release];}
+    [detailController release];
+}
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    NSString *ret = (NSString *)[pageData objectForKey:@"totalRecords"];
-    return [ret integerValue];
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -86,14 +59,13 @@
     
     DemsyProduct *dataModel = [self dataModelForRow:[indexPath row]];
     
-    UILabel *titleLabel = (UILabel *)[tableViewCell viewWithTag:1];
+    UILabel *titleLabel = (UILabel *)[self.tableViewCell viewWithTag:1];
     titleLabel.text = [dataModel title];
     
-    UILabel *summLabel = (UILabel *)[tableViewCell viewWithTag:2];
+    UILabel *summLabel = (UILabel *)[self.tableViewCell viewWithTag:2];
     summLabel.text = [dataModel summary];
-    summLabel.numberOfLines=2;
     
-    UIImageView *imageView = (UIImageView *)[tableViewCell viewWithTag:3];
+    UIImageView *imageView = (UIImageView *)[self.tableViewCell viewWithTag:3];
     DemsyAsyncImageView *asyncImage = [[[DemsyAsyncImageView alloc] init] autorelease];
     asyncImage.imageView = imageView;
     NSURL *url = [DemsyUtils url:dataModel.image];
@@ -103,10 +75,6 @@
 }
 
 #pragma mark - Table view delegate
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 69;
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {    
@@ -129,12 +97,30 @@
 }
 
 #pragma inner methods
+- (NSString *) getCachedFileName{
+    NSString *documentsDirectory =[NSHomeDirectory()stringByAppendingPathComponent:@"Documents"];
+    NSString* path = [NSString stringWithFormat:@"%@/%@",documentsDirectory,@"product.plist"];
+
+    return path;
+}
+
+- (NSURL *) getURLForPageIndex: (NSInteger) pageIndex
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%s/%d",DEMSY_URL_PRODUCT_PLIST,pageIndex]];
+}
+
 - (DemsyProduct *) dataModelForRow: (NSInteger) row
 {
     DemsyProduct *model = [[[DemsyProduct alloc] init] autorelease];
     
-    NSArray *dataRows = (NSArray *)[pageData objectForKey:@"rows"];
-    NSDictionary *dataRow = (NSDictionary *)[dataRows objectAtIndex:row];
+    if (row != 0 && [self.dataRows count] <= row){
+        [self loadNextPageFromURL];
+    }
+    if (row != 0 && [self.dataRows count] <= row){
+        return nil;
+    }
+    
+    NSDictionary *dataRow = (NSDictionary *)[self.dataRows objectAtIndex:row];
     model.ID = [dataRow objectForKey:@"id"];
     model.commentCount = [dataRow objectForKey: @"comment-count"];
     model.image = [dataRow objectForKey:@"image"];
@@ -146,28 +132,6 @@
     return model;
 }
 
-- (NSString *) cachedFile{
-    NSString *documentsDirectory =[NSHomeDirectory()stringByAppendingPathComponent:@"Documents"];
-    NSString* path = [NSString stringWithFormat:@"%@/%@",documentsDirectory,@"product.plist"];
-
-    return path;
-}
-
-- (void)processData{ 
-    
-    [self.asynLoadedData writeToFile:[self cachedFile] atomically:TRUE];
-    
-    [self reloadData];
-    
-    [_tableView reloadData];
-}
-
-- (void) reloadData{
-    NSDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:[self cachedFile]];
-    self.pageData = dic;
-    [dic release];
-
-}
 
 - (void) loadProductCatalog{
 }

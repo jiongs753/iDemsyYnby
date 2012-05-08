@@ -17,56 +17,30 @@
 
 @implementation DemsyWebInfoTableController
 
-@synthesize tableView=_tableView;
-@synthesize tableViewCell;
-@synthesize totalRecords;
-@synthesize pageIndex;
-@synthesize dataRows;
-
 @synthesize detailController;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"新闻";
     
-    // 加载缓存数据
-    [self reloadData];
-    
-    // 异步加载最新数据
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%s/%d",DEMSY_URL_WEBINFO_PLIST,1]];
-    [self loadDataFromUrl:url];    
+    self.title = @"新闻"; 
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     
-    self.tableView = nil;
-    self.tableViewCell = nil;
-    self.dataRows = nil;
-    self.detailController = nil;}
+    self.detailController = nil;
+}
 
 - (void)dealloc
 {
     [super dealloc];
     
-    [_tableView release];
-    [tableViewCell release];
-    [dataRows release];
-    [detailController release];}
+    [detailController release];
+}
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return totalRecords;
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -86,14 +60,13 @@
     if(dataModel == nil)
         return nil;
         
-    UILabel *titleLabel = (UILabel *)[tableViewCell viewWithTag:1];
+    UILabel *titleLabel = (UILabel *)[self.tableViewCell viewWithTag:1];
     titleLabel.text = [dataModel title];
     
-    UILabel *summLabel = (UILabel *)[tableViewCell viewWithTag:2];
+    UILabel *summLabel = (UILabel *)[self.tableViewCell viewWithTag:2];
     summLabel.text = [dataModel summary];
-    summLabel.numberOfLines=2;
     
-    UIImageView *imageView = (UIImageView *)[tableViewCell viewWithTag:3];
+    UIImageView *imageView = (UIImageView *)[self.tableViewCell viewWithTag:3];
     DemsyAsyncImageView *asyncImage = [[[DemsyAsyncImageView alloc] init] autorelease];
     asyncImage.imageView = imageView;
     NSURL *url = [DemsyUtils url:dataModel.image];
@@ -103,10 +76,6 @@
 }
 
 #pragma mark - Table view delegate
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 69;
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {    
@@ -128,27 +97,32 @@
     [detailController reload];
 }
 
-#pragma inner methods
+#pragma mark - override methods
 
-- (NSString *) cachedFile{
+- (NSString *) getCachedFileName{
     NSString *documentsDirectory =[NSHomeDirectory()stringByAppendingPathComponent:@"Documents"];
     NSString* path = [NSString stringWithFormat:@"%@/%@",documentsDirectory,@"webinfodata.plist"];
     
     return path;
 }
 
+- (NSURL *) getURLForPageIndex: (NSInteger) pageIndex
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%s/%d",DEMSY_URL_WEBINFO_PLIST,pageIndex]];
+}
+
 - (DemsyWebInfo *) dataModelForRow: (NSInteger) row
 {
     DemsyWebInfo *model = [[[DemsyWebInfo alloc] init] autorelease];
     
-    if ([dataRows count] <= row){
-        [self loadNextPage];
+    if (row != 0 && [self.dataRows count] <= row){
+        [self loadNextPageFromURL];
     }
-    if ([dataRows count] <= row) {
+    if (row != 0 && [self.dataRows count] <= row){
         return nil;
     }
     
-    NSDictionary *dataRow = (NSDictionary *)[dataRows objectAtIndex:row];
+    NSDictionary *dataRow = (NSDictionary *)[self.dataRows objectAtIndex:row];
     model.ID = [dataRow objectForKey:@"id"];
     model.commentCount = [dataRow objectForKey: @"comment-count"];
     model.image = [dataRow objectForKey:@"image"];
@@ -161,36 +135,5 @@
 }
 
 
-- (void)processData{
-    [self.asynLoadedData writeToFile:[self cachedFile] atomically:TRUE];
-    
-    [self.dataRows removeAllObjects];
-    [self reloadData];
-
-    [_tableView reloadData];
-}
-
-- (void) reloadData{
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:[self cachedFile]];
-    NSArray *rows = [dic objectForKey:@"rows"];
-    
-    [self.dataRows addObjectsFromArray:rows];
-    self.totalRecords = [[dic objectForKey: @"totalRecords"] integerValue];
-    self.pageIndex = [[dic objectForKey: @"pageIndex"] integerValue];
-    
-    [dic release];
-}
-
-- (void) loadNextPage{
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%s/%d",DEMSY_URL_WEBINFO_PLIST, pageIndex+1]];
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfURL:url];
-    NSArray *rows = [dic objectForKey:@"rows"];
-    
-    
-    [self.dataRows addObjectsFromArray:rows];
-    self.totalRecords = [[dic objectForKey: @"totalRecords"] integerValue];
-    self.pageIndex = [[dic objectForKey: @"pageIndex"] integerValue];
-
-}
 
 @end

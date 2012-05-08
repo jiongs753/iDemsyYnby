@@ -62,7 +62,7 @@
     [connection release];
     connection=nil;
     
-    [self processData];
+    [self processAsynLoadedData];
     
     [asynLoadedData release];
     asynLoadedData=nil;
@@ -70,7 +70,7 @@
     self.navigationItem.titleView = nil;
 }
 
-- (void) loadDataFromUrl :(NSURL*)url { 
+- (void) asynLoadDataFromUrl :(NSURL*)url { 
     // add progress bar
     UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];    
     self.navigationItem.titleView = indicatorView;
@@ -86,7 +86,7 @@
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
-- (void) processData{
+- (void) processAsynLoadedData{
     
 }
 

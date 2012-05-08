@@ -54,10 +54,10 @@
     NSString *urlStr=[NSString stringWithFormat:@"%s/%@",DEMSY_URL_PRODUCT_DETAIL ,dataModel.ID];
     NSURL *url = [NSURL URLWithString:urlStr];
     
-    [self loadDataFromUrl:url];
+    [self asynLoadDataFromUrl:url];
 }
 
-- (void) processData{
+- (void) processAsynLoadedData{
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%s",DEMSY_WEB_SERVER]];
     
     [self.webView loadData:[self asynLoadedData] MIMEType:@"text/html" textEncodingName:@"UTF-8" baseURL:url];

@@ -15,7 +15,7 @@
 // 异步加载的数据
 @property (retain, nonatomic) NSMutableData *asynLoadedData;
 
-- (void) loadDataFromUrl :(NSURL*)url;
-- (void) processData;
+- (void) asynLoadDataFromUrl :(NSURL*)url;
+- (void) processAsynLoadedData;
 
 @end

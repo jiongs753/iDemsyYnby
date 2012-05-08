@@ -24,7 +24,7 @@
 #define DEMSY_URL_WEBINFO_DETAIL "http://192.168.1.10:9090/ui/iphone/detailWebInfo"
 
 // product list url, suffix: /imageWidth/imageHeight/pageIndex
-#define DEMSY_URL_PRODUCT_PLIST "http://192.168.1.10:9090/ui/iphone/plistProduct/50/55"
+#define DEMSY_URL_PRODUCT_PLIST "http://192.168.1.10:9090/ui/iphone/plistProduct/55/55"
 
 // product detail url, suffix: /productID
 #define DEMSY_URL_PRODUCT_DETAIL "http://192.168.1.10:9090/ui/iphone/detailProduct"
