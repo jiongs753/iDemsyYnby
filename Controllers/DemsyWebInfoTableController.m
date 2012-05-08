@@ -67,11 +67,19 @@
     summLabel.text = [dataModel summary];
     
     UIImageView *imageView = (UIImageView *)[self.tableViewCell viewWithTag:3];
-    DemsyAsyncImageView *asyncImage = [[[DemsyAsyncImageView alloc] init] autorelease];
-    asyncImage.imageView = imageView;
-    NSURL *url = [DemsyUtils url:dataModel.image];
-    [asyncImage loadImageFromURL:url];
-        
+    
+    NSString *cachedFile = [self getCachedFileName:dataModel.image];
+    UIImage *image = [[UIImage alloc] initWithContentsOfFile:cachedFile];
+    if(image != nil){
+        imageView.image = image;
+    }else{
+        DemsyAsyncImageView *asyncImage = [[[DemsyAsyncImageView alloc] init] autorelease];
+        asyncImage.cachedFile = cachedFile;
+        asyncImage.imageView = imageView;
+        NSURL *url = [DemsyUtils url:dataModel.image];
+        [asyncImage loadImageFromURL:url];
+    }
+    
     return cell;
 }
 

@@ -72,6 +72,12 @@
     return nil;
 }
 
+- (NSString *) getCachedFileName: (NSString *) fileName{
+    NSString *documentsDirectory =[NSHomeDirectory()stringByAppendingPathComponent:@"Documents"];
+    NSString* path = [NSString stringWithFormat:@"%@/%@",documentsDirectory,[fileName stringByReplacingOccurrencesOfString:@"/" withString:@"-"]];
+    
+    return path;
+}
 
 - (void)processAsynLoadedData{
     [self.asynLoadedData writeToFile:[self getCachedFileName] atomically:TRUE];

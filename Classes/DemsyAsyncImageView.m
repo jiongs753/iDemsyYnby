@@ -12,7 +12,9 @@
 
 @synthesize connection;
 @synthesize data;
+@synthesize cachedFile;
 @synthesize imageView;
+
 
 - (void)loadImageFromURL:(NSURL*)url {
     if (connection!=nil) { 
@@ -40,6 +42,9 @@
     [connection release];
     connection=nil;
     
+    if (cachedFile != nil) {
+        [[NSFileManager defaultManager] createFileAtPath:cachedFile contents:data attributes:nil];
+    }    
     imageView.image=[UIImage imageWithData:data];
     
     [data release];

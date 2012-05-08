@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "DemsyAsynURLController.h"
 
-@interface DemsyTableController : DemsyAsynURLController
+@interface DemsyTableController : DemsyAsynURLController<UITableViewDelegate,UITableViewDataSource>
+
 
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (retain, nonatomic) IBOutlet UITableViewCell *tableViewCell;
@@ -19,5 +20,9 @@
 
 - (void) loadDataRowsFromCachedFile;
 - (void) loadNextPageFromURL;
+- (NSString *) getCachedFileName: (NSString *) fileName;
+
+- (NSString *) getCachedFileName;
+- (NSURL *) getURLForPageIndex: (NSInteger) pageIndex;
 
 @end

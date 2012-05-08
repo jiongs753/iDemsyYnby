@@ -12,6 +12,7 @@
     
 @property (retain, nonatomic) NSURLConnection  *connection;
 @property (retain, nonatomic) NSMutableData *data;
+@property (retain, nonatomic) NSString *cachedFile;
 
 @property (retain, nonatomic) UIImageView *imageView;
 

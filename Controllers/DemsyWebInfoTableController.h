@@ -11,7 +11,7 @@
 #import "DemsyWebInfo.h"
 #import "DemsyTableController.h"
 
-@interface DemsyWebInfoTableController: DemsyTableController<UITableViewDelegate,UITableViewDataSource>
+@interface DemsyWebInfoTableController: DemsyTableController
 
 @property (retain, nonatomic) DemsyWebInfoDetailController *detailController;
 

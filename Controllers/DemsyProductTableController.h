@@ -11,7 +11,7 @@
 #import "DemsyTableController.h"
 #import "DemsyProduct.h"
 
-@interface DemsyProductTableController : DemsyTableController<UITableViewDelegate,UITableViewDataSource>
+@interface DemsyProductTableController : DemsyTableController
 
 @property (retain, nonatomic) DemsyProductDetailController *detailController;
 
