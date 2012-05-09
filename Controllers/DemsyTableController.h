@@ -8,15 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import "DemsyAsynURLController.h"
+#import "EGORefreshTableHeaderView.h"
 
-@interface DemsyTableController : DemsyAsynURLController<UITableViewDelegate,UITableViewDataSource>
+@interface DemsyTableController : DemsyAsynURLController<UITableViewDelegate,UITableViewDataSource,EGORefreshTableHeaderDelegate>
 
 
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (retain, nonatomic) IBOutlet UITableViewCell *tableViewCell;
-@property NSInteger totalRecords;
+
+// paging data
 @property NSInteger pageIndex;
 @property (retain, nonatomic) NSMutableArray *dataRows;
+
+// scroll refresh
+@property (retain, nonatomic) EGORefreshTableHeaderView *refreshHeaderView;
+@property BOOL reloading;
 
 - (void) loadDataRowsFromCachedFile;
 - (void) loadNextPageFromURL;
@@ -24,5 +30,9 @@
 
 - (NSString *) getCachedFileName;
 - (NSURL *) getURLForPageIndex: (NSInteger) pageIndex;
+
+// scroll refresh
+- (void) reloadTableViewDataSource;
+- (void) doneLoadingTableViewData;
 
 @end

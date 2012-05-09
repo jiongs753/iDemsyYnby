@@ -46,7 +46,7 @@
 
 - (void)reload{
     
-    NSString *urlStr=[NSString stringWithFormat:@"%s/%@",DEMSY_URL_WEBINFO_DETAIL ,dataModel.ID];
+    NSString *urlStr=[NSString stringWithFormat:@"%s%s/%@",DEMSY_WEB_SERVER,DEMSY_URL_WEBINFO_DETAIL ,dataModel.ID];
     NSURL *url = [NSURL URLWithString:urlStr];
     
     [self asynLoadDataFromUrl:url];

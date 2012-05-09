@@ -48,7 +48,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"BbsReplyCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier]; 
+    
+    if([indexPath row] == ([self.dataRows count])) { 
+        if(cell == nil){
+            cell = [[[UITableViewCell alloc] initWithFrame: CGRectMake(0, 0, 100, 20)] autorelease]; 
+        }
+        cell.textLabel.textAlignment = UITextAlignmentCenter;
+        cell.textLabel.text = @"显示后20条..."; 
+    }else{
+        
+
     if(cell == nil){
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DemsyBbsTableCell" owner:self options:nil];
         if([nib count] > 0){
@@ -71,6 +81,7 @@
     
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     
+    }
     return cell;
 }
 
@@ -78,7 +89,7 @@
 
 - (void)reload{
     
-    NSString *urlStr=[NSString stringWithFormat:@"%s/%@/1",DEMSY_URL_BBS_REPLY_PLIST ,dataModel.ID];
+    NSString *urlStr=[NSString stringWithFormat:@"%s%s/%@/1",DEMSY_WEB_SERVER, DEMSY_URL_BBS_REPLY_PLIST ,dataModel.ID];
     NSURL *url = [NSURL URLWithString:urlStr];
     
     [self asynLoadDataFromUrl:url];
@@ -93,7 +104,7 @@
 
 - (NSURL *) getURLForPageIndex: (NSInteger) pageIndex
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%s/%d/%d",DEMSY_URL_BBS_REPLY_PLIST,self.dataModel.ID,pageIndex]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%s%s/%d/%d",DEMSY_WEB_SERVER,DEMSY_URL_BBS_REPLY_PLIST,self.dataModel.ID,pageIndex]];
     
     return url;
 }
@@ -101,13 +112,6 @@
 - (DemsyBbs *) dataModelForRow: (NSInteger) row
 {
     DemsyBbs *model = [[[DemsyBbs alloc] init] autorelease];
-    
-    if (row != 0 && [self.dataRows count] <= row){
-        [self loadNextPageFromURL];
-    }
-    if (row != 0 && [self.dataRows count] <= row){
-        return nil;
-    }
     
     NSDictionary *dataRow = (NSDictionary *)[self.dataRows objectAtIndex:row];
     model.ID = [dataRow objectForKey:@"id"];

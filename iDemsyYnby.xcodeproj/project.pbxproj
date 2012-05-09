@@ -26,6 +26,16 @@
 		AE842E341557BE0C00BBE1DC /* DemsyProductDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE842E331557BE0C00BBE1DC /* DemsyProductDetailController.m */; };
 		AE842E3A1557BF7F00BBE1DC /* DemsyProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = AE842E391557BF7F00BBE1DC /* DemsyProduct.m */; };
 		AE842E3C1557CA4100BBE1DC /* DemsyProductTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE842E3B1557CA4100BBE1DC /* DemsyProductTableCell.xib */; };
+		AE8A3017155A0EEB00E7BD53 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A3016155A0EEB00E7BD53 /* EGORefreshTableHeaderView.m */; };
+		AE8A3021155A0F1500E7BD53 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8A3019155A0F1500E7BD53 /* blackArrow.png */; };
+		AE8A3022155A0F1500E7BD53 /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8A301A155A0F1500E7BD53 /* blackArrow@2x.png */; };
+		AE8A3023155A0F1500E7BD53 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8A301B155A0F1500E7BD53 /* blueArrow.png */; };
+		AE8A3024155A0F1500E7BD53 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8A301C155A0F1500E7BD53 /* blueArrow@2x.png */; };
+		AE8A3025155A0F1500E7BD53 /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8A301D155A0F1500E7BD53 /* grayArrow.png */; };
+		AE8A3026155A0F1500E7BD53 /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8A301E155A0F1500E7BD53 /* grayArrow@2x.png */; };
+		AE8A3027155A0F1500E7BD53 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8A301F155A0F1500E7BD53 /* whiteArrow.png */; };
+		AE8A3028155A0F1500E7BD53 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8A3020155A0F1500E7BD53 /* whiteArrow@2x.png */; };
+		AE8A302E155A115800E7BD53 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE8A302D155A115800E7BD53 /* QuartzCore.framework */; };
 		AE9B2DA5155524D1005ABB10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9B2DA4155524D1005ABB10 /* UIKit.framework */; };
 		AE9B2DA7155524D1005ABB10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9B2DA6155524D1005ABB10 /* Foundation.framework */; };
 		AE9B2DA9155524D1005ABB10 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9B2DA8155524D1005ABB10 /* CoreGraphics.framework */; };
@@ -88,6 +98,17 @@
 		AE842E381557BF7F00BBE1DC /* DemsyProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyProduct.h; sourceTree = "<group>"; };
 		AE842E391557BF7F00BBE1DC /* DemsyProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyProduct.m; sourceTree = "<group>"; };
 		AE842E3B1557CA4100BBE1DC /* DemsyProductTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyProductTableCell.xib; sourceTree = "<group>"; };
+		AE8A3015155A0EEB00E7BD53 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		AE8A3016155A0EEB00E7BD53 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		AE8A3019155A0F1500E7BD53 /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
+		AE8A301A155A0F1500E7BD53 /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
+		AE8A301B155A0F1500E7BD53 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		AE8A301C155A0F1500E7BD53 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
+		AE8A301D155A0F1500E7BD53 /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayArrow.png; sourceTree = "<group>"; };
+		AE8A301E155A0F1500E7BD53 /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
+		AE8A301F155A0F1500E7BD53 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
+		AE8A3020155A0F1500E7BD53 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
+		AE8A302D155A115800E7BD53 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AE9B2DA0155524D1005ABB10 /* 云南白药.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "云南白药.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE9B2DA4155524D1005ABB10 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AE9B2DA6155524D1005ABB10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -137,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE8A302E155A115800E7BD53 /* QuartzCore.framework in Frameworks */,
 				AE9B2DA5155524D1005ABB10 /* UIKit.framework in Frameworks */,
 				AE9B2DA7155524D1005ABB10 /* Foundation.framework in Frameworks */,
 				AE9B2DA9155524D1005ABB10 /* CoreGraphics.framework in Frameworks */,
@@ -146,9 +168,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE8A3013155A0EAC00E7BD53 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				AE8A3014155A0EEB00E7BD53 /* RefreshTableHeaderView */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		AE8A3014155A0EEB00E7BD53 /* RefreshTableHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				AE8A3018155A0F1500E7BD53 /* Resources */,
+				AE8A3015155A0EEB00E7BD53 /* EGORefreshTableHeaderView.h */,
+				AE8A3016155A0EEB00E7BD53 /* EGORefreshTableHeaderView.m */,
+			);
+			path = RefreshTableHeaderView;
+			sourceTree = "<group>";
+		};
+		AE8A3018155A0F1500E7BD53 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AE8A3019155A0F1500E7BD53 /* blackArrow.png */,
+				AE8A301A155A0F1500E7BD53 /* blackArrow@2x.png */,
+				AE8A301B155A0F1500E7BD53 /* blueArrow.png */,
+				AE8A301C155A0F1500E7BD53 /* blueArrow@2x.png */,
+				AE8A301D155A0F1500E7BD53 /* grayArrow.png */,
+				AE8A301E155A0F1500E7BD53 /* grayArrow@2x.png */,
+				AE8A301F155A0F1500E7BD53 /* whiteArrow.png */,
+				AE8A3020155A0F1500E7BD53 /* whiteArrow@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		AE9B2D95155524D1005ABB10 = {
 			isa = PBXGroup;
 			children = (
+				AE8A3013155A0EAC00E7BD53 /* Libs */,
 				AE9B2DCC15552501005ABB10 /* Resources */,
 				AE9B2DBB15552501005ABB10 /* Classes */,
 				AE9B2DC915552501005ABB10 /* Models */,
@@ -171,6 +227,7 @@
 		AE9B2DA3155524D1005ABB10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE8A302D155A115800E7BD53 /* QuartzCore.framework */,
 				AE9B2DA4155524D1005ABB10 /* UIKit.framework */,
 				AE9B2DA6155524D1005ABB10 /* Foundation.framework */,
 				AE9B2DA8155524D1005ABB10 /* CoreGraphics.framework */,
@@ -374,6 +431,14 @@
 				AE17226915594BB40055A83D /* DemsyBbsTableCell.xib in Resources */,
 				AE17226B15594CF20055A83D /* DemsyOfficeRootView.xib in Resources */,
 				AE17226D15595B500055A83D /* DemsyMoreRootView.xib in Resources */,
+				AE8A3021155A0F1500E7BD53 /* blackArrow.png in Resources */,
+				AE8A3022155A0F1500E7BD53 /* blackArrow@2x.png in Resources */,
+				AE8A3023155A0F1500E7BD53 /* blueArrow.png in Resources */,
+				AE8A3024155A0F1500E7BD53 /* blueArrow@2x.png in Resources */,
+				AE8A3025155A0F1500E7BD53 /* grayArrow.png in Resources */,
+				AE8A3026155A0F1500E7BD53 /* grayArrow@2x.png in Resources */,
+				AE8A3027155A0F1500E7BD53 /* whiteArrow.png in Resources */,
+				AE8A3028155A0F1500E7BD53 /* whiteArrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +467,7 @@
 				AE172261155946B50055A83D /* DemsyBbsTableController.m in Sources */,
 				AE1722641559470B0055A83D /* DemsyBbsReplyTableController.m in Sources */,
 				AE1722671559473E0055A83D /* DemsyBbs.m in Sources */,
+				AE8A3017155A0EEB00E7BD53 /* EGORefreshTableHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

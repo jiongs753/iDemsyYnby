@@ -7,14 +7,19 @@
 //
 
 #import "DemsyTableController.h"
+#import "EGORefreshTableHeaderView.h"
+#import "DemsyUtils.h"
 
 @implementation DemsyTableController
 
 @synthesize tableView=_tableView;
 @synthesize tableViewCell;
-@synthesize totalRecords;
 @synthesize pageIndex;
 @synthesize dataRows;
+
+// scroll refresh
+@synthesize refreshHeaderView;
+@synthesize reloading;
 
 - (void)viewDidLoad
 {
@@ -25,7 +30,17 @@
     [self loadDataRowsFromCachedFile];
     
     // 异步加载最新数据
-    [self asynLoadDataFromUrl:[self getURLForPageIndex:1]];   
+    [self asynLoadDataFromUrl:[self getURLForPageIndex:1]];
+    
+    // scroll refresh
+    if (refreshHeaderView == nil) { 
+		EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
+		view.delegate = self;
+		[self.tableView addSubview:view];
+		refreshHeaderView = view;
+		[view release];
+    } 
+    [refreshHeaderView refreshLastUpdatedDate]; 
 }
 
 - (void)viewDidUnload
@@ -53,11 +68,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return totalRecords;
+    return dataRows.count + 1;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPat
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if(indexPath.row == dataRows.count)
+        return 40;
+    
     return 69;
 }
 
@@ -91,24 +109,90 @@
 - (void) loadDataRowsFromCachedFile{
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:[self getCachedFileName]];
     
-    [self refreshCache:dic];
+    [self appendDataRows:dic];
     
     [dic release];
 }
 
+#pragma mark - load next page data
+
+-(void)loadMore 
+{ 
+    [self loadNextPageFromURL];
+    //加载你的数据 
+    [self performSelectorOnMainThread:@selector(appendTableWith) withObject:nil waitUntilDone:NO];
+} 
+
 - (void) loadNextPageFromURL{
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfURL:[self getURLForPageIndex: pageIndex+1]];
     
-    [self refreshCache:dic];
+    [self appendDataRows:dic];
     
     [dic release];  
 }
 
--(void) refreshCache: (NSDictionary *) result{
+-(void) appendDataRows: (NSDictionary *) result{
     NSArray *rows = [result objectForKey:@"rows"];
     
     [dataRows addObjectsFromArray:rows];
-    self.totalRecords = [[result objectForKey: @"totalRecords"] integerValue];
-    self.pageIndex = [[result objectForKey: @"pageIndex"] integerValue];}
+    self.pageIndex = [[result objectForKey: @"pageIndex"] integerValue];
+}
+
+-(void) appendTableWith
+{ 
+    NSMutableArray *insertIndexPaths = [NSMutableArray arrayWithCapacity:20]; 
+    for (int row = (pageIndex-1) * DEMSY_PAGE_SIZE; row < [self.dataRows count]; row++) { 
+        NSIndexPath    *newPath =  [NSIndexPath indexPathForRow:row inSection:0]; 
+        [insertIndexPaths addObject:newPath]; 
+    } 
+    [self.tableView insertRowsAtIndexPaths:insertIndexPaths withRowAnimation:UITableViewRowAnimationFade]; 
+    
+} 
+
+#pragma mark - scroll refresh data
+#pragma mark – 
+#pragma mark Data Source Loading / Reloading Methods
+
+- (void)reloadTableViewDataSource{
+    
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfURL:[self getURLForPageIndex: 1]];
+    
+    [self.dataRows removeAllObjects];
+    [self appendDataRows:dic];
+    
+    [dic release];  
+    
+    [self.tableView reloadData];
+    
+    reloading = YES; 
+}
+
+- (void)doneLoadingTableViewData{ 
+    reloading = NO; 
+    [refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView]; 
+} 
+#pragma mark – 
+#pragma mark UIScrollViewDelegate Methods 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{    
+    [refreshHeaderView egoRefreshScrollViewDidScroll:scrollView]; 
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{ 
+    [refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView]; 
+} 
+#pragma mark – 
+#pragma mark EGORefreshTableHeaderDelegate Methods 
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
+    [self reloadTableViewDataSource]; 
+    [self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0]; 
+}
+
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view{
+    return reloading; 
+} 
+
+- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view{
+    return [NSDate date];     
+} 
 
 @end

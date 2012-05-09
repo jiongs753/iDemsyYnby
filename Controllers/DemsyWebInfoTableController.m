@@ -45,39 +45,47 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"WebInfoCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if(cell == nil){
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DemsyWebInfoTableCell" owner:self options:nil];
-        if([nib count] > 0){
-            cell = self.tableViewCell;
-        }else{
-            NSLog(@"failed to load DemsyWebInfoTableCell nib file!");
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];  
+    
+    if([indexPath row] == ([self.dataRows count])) { 
+        if(cell == nil){
+            cell = [[[UITableViewCell alloc] initWithFrame: CGRectMake(0, 0, 100, 20)] autorelease]; 
         }
-    }
-    	
-    DemsyWebInfo *dataModel = [self dataModelForRow:[indexPath row]];
-    
-    if(dataModel == nil)
-        return nil;
-        
-    UILabel *titleLabel = (UILabel *)[self.tableViewCell viewWithTag:1];
-    titleLabel.text = [dataModel title];
-    
-    UILabel *summLabel = (UILabel *)[self.tableViewCell viewWithTag:2];
-    summLabel.text = [dataModel summary];
-    
-    UIImageView *imageView = (UIImageView *)[self.tableViewCell viewWithTag:3];
-    
-    NSString *cachedFile = [self getCachedFileName:dataModel.image];
-    UIImage *image = [[UIImage alloc] initWithContentsOfFile:cachedFile];
-    if(image != nil){
-        imageView.image = image;
+        cell.textLabel.textAlignment = UITextAlignmentCenter;
+        cell.textLabel.text = @"显示后20条..."; 
     }else{
-        DemsyAsyncImageView *asyncImage = [[[DemsyAsyncImageView alloc] init] autorelease];
-        asyncImage.cachedFile = cachedFile;
-        asyncImage.imageView = imageView;
-        NSURL *url = [DemsyUtils url:dataModel.image];
-        [asyncImage loadImageFromURL:url];
+        
+        if(cell == nil){
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DemsyWebInfoTableCell" owner:self options:nil];
+            if([nib count] > 0){
+                cell = self.tableViewCell;
+            }else{
+                NSLog(@"failed to load DemsyWebInfoTableCell nib file!");
+            }
+        }
+
+        DemsyWebInfo *dataModel = [self dataModelForRow:[indexPath row]];
+            
+        UILabel *titleLabel = (UILabel *)[self.tableViewCell viewWithTag:1];
+        titleLabel.text = [dataModel title];
+    
+        UILabel *summLabel = (UILabel *)[self.tableViewCell viewWithTag:2];
+        summLabel.text = [dataModel summary];
+    
+        UIImageView *imageView = (UIImageView *)[self.tableViewCell viewWithTag:3];
+    
+        NSString *cachedFile = [self getCachedFileName:dataModel.image];
+        UIImage *image = [[UIImage alloc] initWithContentsOfFile:cachedFile];
+        if(image != nil){
+            imageView.image = image;
+        }else{
+            DemsyAsyncImageView *asyncImage = [[[DemsyAsyncImageView alloc] init] autorelease];
+            asyncImage.cachedFile = cachedFile;
+            asyncImage.imageView = imageView;
+            NSURL *url = [DemsyUtils url:dataModel.image];
+            [asyncImage loadImageFromURL:url];
+        }
+        
     }
     
     return cell;
@@ -87,22 +95,29 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {    
-    if(detailController == nil){
-        DemsyWebInfoDetailController *controller = [[DemsyWebInfoDetailController alloc] initWithNibName:@"DemsyWebInfoDetailView" bundle:nil];
+    if (indexPath.row == [self.dataRows count]) { 
+        UITableViewCell *loadMoreCell=[tableView cellForRowAtIndexPath:indexPath]; 
+        loadMoreCell.textLabel.text=@"正在加载..."; 
+        [self performSelectorInBackground:@selector(loadMore) withObject:nil]; 
+        [tableView deselectRowAtIndexPath:indexPath animated:YES]; 
+    }else {    
         
-        self.detailController = controller;
+        if(detailController == nil){
+            DemsyWebInfoDetailController *controller = [[DemsyWebInfoDetailController alloc] initWithNibName:@"DemsyWebInfoDetailView" bundle:nil];
+            self.detailController = controller;
+            [controller release];
+        }
+    
+        [self.navigationController pushViewController:detailController animated:YES];
+    
+        DemsyWebInfo *model = [self dataModelForRow:[indexPath row]];
+        detailController.dataModel = model;
+        detailController.title = [model title];
+        [detailController.webView clearsContextBeforeDrawing];
+    
+        [detailController reload];
         
-        [controller release];
-    }
-    
-    [self.navigationController pushViewController:detailController animated:YES];
-    
-    DemsyWebInfo *model = [self dataModelForRow:[indexPath row]];
-    detailController.dataModel = model;
-    detailController.title = [model title];
-    [detailController.webView clearsContextBeforeDrawing];
-    
-    [detailController reload];
+    } 
 }
 
 #pragma mark - override methods
@@ -116,20 +131,13 @@
 
 - (NSURL *) getURLForPageIndex: (NSInteger) pageIndex
 {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"%s/%d",DEMSY_URL_WEBINFO_PLIST,pageIndex]];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%s%s/%d",DEMSY_WEB_SERVER,DEMSY_URL_WEBINFO_PLIST,pageIndex]];
 }
 
 - (DemsyWebInfo *) dataModelForRow: (NSInteger) row
 {
     DemsyWebInfo *model = [[[DemsyWebInfo alloc] init] autorelease];
-    
-    if (row != 0 && [self.dataRows count] <= row){
-        [self loadNextPageFromURL];
-    }
-    if (row != 0 && [self.dataRows count] <= row){
-        return nil;
-    }
-    
+        
     NSDictionary *dataRow = (NSDictionary *)[self.dataRows objectAtIndex:row];
     model.ID = [dataRow objectForKey:@"id"];
     model.commentCount = [dataRow objectForKey: @"comment-count"];

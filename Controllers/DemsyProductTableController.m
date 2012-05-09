@@ -47,7 +47,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ProductCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier]; 
+    
+    if([indexPath row] == ([self.dataRows count])) { 
+        if(cell == nil){
+            cell = [[[UITableViewCell alloc] initWithFrame: CGRectMake(0, 0, 100, 20)] autorelease]; 
+        }
+        cell.textLabel.textAlignment = UITextAlignmentCenter;
+        cell.textLabel.text = @"显示后20条..."; 
+    }else{
+
     if(cell == nil){
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DemsyProductTableCell" owner:self options:nil];
         if([nib count] > 0){
@@ -78,6 +87,8 @@
         NSURL *url = [DemsyUtils url:dataModel.image];
         [asyncImage loadImageFromURL:url];
     }
+        
+    }
     
     return cell;
 }
@@ -86,6 +97,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {    
+    if (indexPath.row == [self.dataRows count]) { 
+        UITableViewCell *loadMoreCell=[tableView cellForRowAtIndexPath:indexPath]; 
+        loadMoreCell.textLabel.text=@"正在加载..."; 
+        [self performSelectorInBackground:@selector(loadMore) withObject:nil]; 
+        [tableView deselectRowAtIndexPath:indexPath animated:YES]; 
+    }else {    
+
     if(detailController == nil){
         DemsyProductDetailController *controller = [[DemsyProductDetailController alloc] initWithNibName:@"DemsyProductDetailView" bundle:nil];
         
@@ -102,6 +120,8 @@
     [detailController.webView clearsContextBeforeDrawing];
     
     [detailController reload];
+        
+    }
 }
 
 #pragma inner methods
@@ -114,20 +134,13 @@
 
 - (NSURL *) getURLForPageIndex: (NSInteger) pageIndex
 {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"%s/%d",DEMSY_URL_PRODUCT_PLIST,pageIndex]];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%s%s/%d",DEMSY_WEB_SERVER,DEMSY_URL_PRODUCT_PLIST,pageIndex]];
 }
 
 - (DemsyProduct *) dataModelForRow: (NSInteger) row
 {
     DemsyProduct *model = [[[DemsyProduct alloc] init] autorelease];
-    
-    if (row != 0 && [self.dataRows count] <= row){
-        [self loadNextPageFromURL];
-    }
-    if (row != 0 && [self.dataRows count] <= row){
-        return nil;
-    }
-    
+        
     NSDictionary *dataRow = (NSDictionary *)[self.dataRows objectAtIndex:row];
     model.ID = [dataRow objectForKey:@"id"];
     model.commentCount = [dataRow objectForKey: @"comment-count"];

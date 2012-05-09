@@ -18,29 +18,29 @@
 
 #ifdef DEMSY_TEST
 
-#define DEMSY_WEB_SERVER "http://192.168.1.117:9090"
-#define DEMSY_URL_WEBINFO_PLIST "http://192.168.1.117:9090/ui/iphone/plistWebInfo/70/55"
-#define DEMSY_URL_WEBINFO_DETAIL "http://192.168.1.117:9090/ui/iphone/detailWebInfo"
-#define DEMSY_URL_PRODUCT_PLIST "http://192.168.1.117:9090/ui/iphone/plistProduct/55/55"
-#define DEMSY_URL_PRODUCT_DETAIL "http://192.168.1.117:9090/ui/iphone/detailProduct"
-#define DEMSY_URL_BBS_PLIST "http://192.168.1.117:9090/ui/iphone/plistBbs"
-#define DEMSY_URL_BBS_DETAIL "http://192.168.1.117:9090/ui/iphone/detailBbs"
-#define DEMSY_URL_BBS_REPLY_PLIST "http://192.168.1.117:9090/ui/iphone/plistBbsReply"
-#define DEMSY_URL_BBS_REPLY_DETAIL "http://192.168.1.117:9090/ui/iphone/detailBbsReply"
+#define DEMSY_WEB_SERVER "http://192.168.1.10:9090"
+#define DEMSY_URL_WEBINFO_PLIST "/ui/iphone/plistWebInfo/70/55"
+#define DEMSY_URL_WEBINFO_DETAIL "/ui/iphone/detailWebInfo"
+#define DEMSY_URL_PRODUCT_PLIST "/ui/iphone/plistProduct/55/55"
+#define DEMSY_URL_PRODUCT_DETAIL "/ui/iphone/detailProduct"
+#define DEMSY_URL_BBS_PLIST "/ui/iphone/plistBbs"
+#define DEMSY_URL_BBS_DETAIL "/ui/iphone/detailBbs"
+#define DEMSY_URL_BBS_REPLY_PLIST "/ui/iphone/plistBbsReply"
+#define DEMSY_URL_BBS_REPLY_DETAIL "/ui/iphone/detailBbsReply"
 
 #endif
 
 #ifndef DEMSY_TEST
 
 #define DEMSY_WEB_SERVER "http://www.yunnanbaiyao.com.cn"
-#define DEMSY_URL_WEBINFO_PLIST "http://www.yunnanbaiyao.com.cn/ui/iphone/plistWebInfo/70/55"
-#define DEMSY_URL_WEBINFO_DETAIL "http://www.yunnanbaiyao.com.cn/ui/iphone/detailWebInfo"
-#define DEMSY_URL_PRODUCT_PLIST "http://www.yunnanbaiyao.com.cn/ui/iphone/plistProduct/55/55"
-#define DEMSY_URL_PRODUCT_DETAIL "http://www.yunnanbaiyao.com.cn/ui/iphone/detailProduct"
-#define DEMSY_URL_BBS_PLIST "http://www.yunnanbaiyao.com.cn/ui/iphone/plistBbs"
-#define DEMSY_URL_BBS_DETAIL "http://www.yunnanbaiyao.com.cn/ui/iphone/detailBbs"
-#define DEMSY_URL_BBS_REPLY_PLIST "http://www.yunnanbaiyao.com.cn/ui/iphone/plistBbsReply"
-#define DEMSY_URL_BBS_REPLY_DETAIL "http://www.yunnanbaiyao.com.cn/ui/iphone/detailBbsReply"
+#define DEMSY_URL_WEBINFO_PLIST "/ui/iphone/plistWebInfo/70/55"
+#define DEMSY_URL_WEBINFO_DETAIL "/ui/iphone/detailWebInfo"
+#define DEMSY_URL_PRODUCT_PLIST "/ui/iphone/plistProduct/55/55"
+#define DEMSY_URL_PRODUCT_DETAIL "/ui/iphone/detailProduct"
+#define DEMSY_URL_BBS_PLIST "/ui/iphone/plistBbs"
+#define DEMSY_URL_BBS_DETAIL "/ui/iphone/detailBbs"
+#define DEMSY_URL_BBS_REPLY_PLIST "/ui/iphone/plistBbsReply"
+#define DEMSY_URL_BBS_REPLY_DETAIL "/ui/iphone/detailBbsReply"
 #endif
 
 #endif
