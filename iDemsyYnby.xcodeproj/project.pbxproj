@@ -88,14 +88,14 @@
 		AE842E381557BF7F00BBE1DC /* DemsyProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyProduct.h; sourceTree = "<group>"; };
 		AE842E391557BF7F00BBE1DC /* DemsyProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyProduct.m; sourceTree = "<group>"; };
 		AE842E3B1557CA4100BBE1DC /* DemsyProductTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyProductTableCell.xib; sourceTree = "<group>"; };
-		AE9B2DA0155524D1005ABB10 /* iDemsyYnby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDemsyYnby.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE9B2DA0155524D1005ABB10 /* 云南白药.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "云南白药.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE9B2DA4155524D1005ABB10 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AE9B2DA6155524D1005ABB10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AE9B2DA8155524D1005ABB10 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		AE9B2DAC155524D1005ABB10 /* iDemsyYnby-Info.plist */ = {isa = PBXFileReference; path = "iDemsyYnby-Info.plist"; sourceTree = "<group>"; };
+		AE9B2DAC155524D1005ABB10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE9B2DAE155524D1005ABB10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AE9B2DB0155524D1005ABB10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AE9B2DB2155524D1005ABB10 /* iDemsyYnby-Prefix.pch */ = {isa = PBXFileReference; path = "iDemsyYnby-Prefix.pch"; sourceTree = "<group>"; };
+		AE9B2DB2155524D1005ABB10 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		AE9B2DB3155524D1005ABB10 /* DemsyAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemsyAppDelegate.h; sourceTree = "<group>"; };
 		AE9B2DB4155524D1005ABB10 /* DemsyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemsyAppDelegate.m; sourceTree = "<group>"; };
 		AE9B2DBC15552501005ABB10 /* DemsyAsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyAsyncImageView.h; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 		AE9B2DA1155524D1005ABB10 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AE9B2DA0155524D1005ABB10 /* iDemsyYnby.app */,
+				AE9B2DA0155524D1005ABB10 /* 云南白药.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,10 +191,10 @@
 		AE9B2DAB155524D1005ABB10 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AE9B2DAC155524D1005ABB10 /* iDemsyYnby-Info.plist */,
+				AE9B2DAC155524D1005ABB10 /* Info.plist */,
 				AE9B2DAD155524D1005ABB10 /* InfoPlist.strings */,
 				AE9B2DB0155524D1005ABB10 /* main.m */,
-				AE9B2DB2155524D1005ABB10 /* iDemsyYnby-Prefix.pch */,
+				AE9B2DB2155524D1005ABB10 /* Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -297,9 +297,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AE9B2D9F155524D1005ABB10 /* iDemsyYnby */ = {
+		AE9B2D9F155524D1005ABB10 /* 云南白药 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AE9B2DB8155524D1005ABB10 /* Build configuration list for PBXNativeTarget "iDemsyYnby" */;
+			buildConfigurationList = AE9B2DB8155524D1005ABB10 /* Build configuration list for PBXNativeTarget "云南白药" */;
 			buildPhases = (
 				AE9B2D9C155524D1005ABB10 /* Sources */,
 				AE9B2D9D155524D1005ABB10 /* Frameworks */,
@@ -309,9 +309,9 @@
 			);
 			dependencies = (
 			);
-			name = iDemsyYnby;
+			name = "云南白药";
 			productName = iDemsyYnby;
-			productReference = AE9B2DA0155524D1005ABB10 /* iDemsyYnby.app */;
+			productReference = AE9B2DA0155524D1005ABB10 /* 云南白药.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -335,7 +335,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AE9B2D9F155524D1005ABB10 /* iDemsyYnby */,
+				AE9B2D9F155524D1005ABB10 /* 云南白药 */,
 			);
 		};
 /* End PBXProject section */
@@ -466,10 +466,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iDemsyYnby/iDemsyYnby-Prefix.pch";
-				INFOPLIST_FILE = "iDemsyYnby/iDemsyYnby-Info.plist";
+				GCC_PREFIX_HEADER = iDemsyYnby/Prefix.pch;
+				INFOPLIST_FILE = iDemsyYnby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PRODUCT_NAME = iDemsyYnby;
+				PRODUCT_NAME = "云南白药";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -478,10 +478,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iDemsyYnby/iDemsyYnby-Prefix.pch";
-				INFOPLIST_FILE = "iDemsyYnby/iDemsyYnby-Info.plist";
+				GCC_PREFIX_HEADER = iDemsyYnby/Prefix.pch;
+				INFOPLIST_FILE = iDemsyYnby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PRODUCT_NAME = iDemsyYnby;
+				PRODUCT_NAME = "云南白药";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -498,7 +498,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE9B2DB8155524D1005ABB10 /* Build configuration list for PBXNativeTarget "iDemsyYnby" */ = {
+		AE9B2DB8155524D1005ABB10 /* Build configuration list for PBXNativeTarget "云南白药" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE9B2DB9155524D1005ABB10 /* Debug */,
