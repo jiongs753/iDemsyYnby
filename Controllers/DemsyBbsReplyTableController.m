@@ -55,7 +55,14 @@
             cell = [[[UITableViewCell alloc] initWithFrame: CGRectMake(0, 0, 100, 20)] autorelease]; 
         }
         cell.textLabel.textAlignment = UITextAlignmentCenter;
-        cell.textLabel.text = @"显示后20条..."; 
+        
+        //自动加载分页数据
+        if(!self.noMore){
+            cell.textLabel.text=[NSString stringWithFormat: @"正在加载第 %d 页...", self.pageIndex + 1]; 
+            [self performSelectorInBackground:@selector(loadMore) withObject:nil];
+        }else {
+            cell.textLabel.text = [NSString stringWithFormat: @"共 %d 条记录!", self.dataRows.count]; 
+        }
     }else{
         
 

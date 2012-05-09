@@ -20,6 +20,7 @@
 // scroll refresh
 @synthesize refreshHeaderView;
 @synthesize reloading;
+@synthesize noMore;
 
 - (void)viewDidLoad
 {
@@ -50,6 +51,7 @@
     self.tableView = nil;
     self.tableViewCell = nil;
     self.dataRows = nil;
+    self.refreshHeaderView = nil;
 }
 
 - (void)dealloc
@@ -59,6 +61,7 @@
     [_tableView release];
     [tableViewCell release];
     [dataRows release];
+    [refreshHeaderView release];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -68,17 +71,27 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if(dataRows.count < DEMSY_PAGE_SIZE){
+        return dataRows.count;
+    }
+    
     return dataRows.count + 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row == dataRows.count)
-        return 40;
     
     return 69;
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{    
+}
 #pragma mark - abstract methods will be override
 
 - (NSString *) getCachedFileName{
@@ -119,7 +132,7 @@
 -(void)loadMore 
 { 
     [self loadNextPageFromURL];
-    //加载你的数据 
+    
     [self performSelectorOnMainThread:@selector(appendTableWith) withObject:nil waitUntilDone:NO];
 } 
 
@@ -134,8 +147,14 @@
 -(void) appendDataRows: (NSDictionary *) result{
     NSArray *rows = [result objectForKey:@"rows"];
     
+    //delete more row
+    if(rows.count < DEMSY_PAGE_SIZE){
+        self.noMore = TRUE;
+    }
+    
     [dataRows addObjectsFromArray:rows];
     self.pageIndex = [[result objectForKey: @"pageIndex"] integerValue];
+
 }
 
 -(void) appendTableWith
@@ -145,8 +164,7 @@
         NSIndexPath    *newPath =  [NSIndexPath indexPathForRow:row inSection:0]; 
         [insertIndexPaths addObject:newPath]; 
     } 
-    [self.tableView insertRowsAtIndexPaths:insertIndexPaths withRowAnimation:UITableViewRowAnimationFade]; 
-    
+    [self.tableView insertRowsAtIndexPaths:insertIndexPaths withRowAnimation:UITableViewRowAnimationNone]; 
 } 
 
 #pragma mark - scroll refresh data
@@ -158,6 +176,8 @@
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfURL:[self getURLForPageIndex: 1]];
     
     [self.dataRows removeAllObjects];
+    self.noMore = FALSE;
+    
     [self appendDataRows:dic];
     
     [dic release];  

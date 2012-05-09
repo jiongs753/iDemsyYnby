@@ -23,6 +23,7 @@
 // scroll refresh
 @property (retain, nonatomic) EGORefreshTableHeaderView *refreshHeaderView;
 @property BOOL reloading;
+@property BOOL noMore;
 
 - (void) loadDataRowsFromCachedFile;
 - (void) loadNextPageFromURL;
