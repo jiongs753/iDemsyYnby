@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "Three20/Three20.h"
 
 #ifndef DEMSY_CONSTS
 #define DEMSY_CONSTS
