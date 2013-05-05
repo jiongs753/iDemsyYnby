@@ -1,11 +1,4 @@
-//
-//  main.m
-//  demsyios
-//
-//  Created by yongshan ji on 12-4-27.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
-//
-
+/*
 #import <UIKit/UIKit.h>
 
 #import "DemsyAppDelegate.h"
@@ -15,4 +8,15 @@ int main(int argc, char *argv[])
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, nil);
     }
+}
+*/
+
+#import <Three20/Three20.h>
+
+int main(int argc, char *argv[]) {
+	
+	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+	int retVal = UIApplicationMain(argc, argv, nil, @"DemsyAppDelegate2");
+	[pool release];
+	return retVal;
 }

@@ -75,6 +75,9 @@
 		AE9B2DF615552501005ABB10 /* DemsyWebInfoRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE9B2DDD15552501005ABB10 /* DemsyWebInfoRootView.xib */; };
 		AE9B2DF715552501005ABB10 /* DemsyWebInfoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE9B2DDE15552501005ABB10 /* DemsyWebInfoTableCell.xib */; };
 		AE9B2DF815552501005ABB10 /* DemsyWebInfoTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE9B2DDF15552501005ABB10 /* DemsyWebInfoTableView.xib */; };
+		AEB9D1A51735870300238025 /* DemsyAppDelegate2.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB9D1A41735870300238025 /* DemsyAppDelegate2.m */; };
+		AEB9D1A817358A0900238025 /* DemsyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB9D1A717358A0900238025 /* DemsyTabBarController.m */; };
+		AEB9D1AB1735A2D300238025 /* DemsyMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB9D1AA1735A2D300238025 /* DemsyMenuController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -231,31 +234,31 @@
 		AE172255155945CA0055A83D /* DemsyBbsRootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyBbsRootView.xib; sourceTree = "<group>"; };
 		AE172258155945DE0055A83D /* DemsyBbsTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyBbsTableView.xib; sourceTree = "<group>"; };
 		AE17225A155945F10055A83D /* DemsyBbsReplyTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyBbsReplyTableView.xib; sourceTree = "<group>"; };
-		AE17225C155946410055A83D /* DemsyBbsRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyBbsRootController.h; sourceTree = "<group>"; };
-		AE17225D155946410055A83D /* DemsyBbsRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyBbsRootController.m; sourceTree = "<group>"; };
-		AE17225F155946B50055A83D /* DemsyBbsTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyBbsTableController.h; sourceTree = "<group>"; };
-		AE172260155946B50055A83D /* DemsyBbsTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyBbsTableController.m; sourceTree = "<group>"; };
-		AE1722621559470B0055A83D /* DemsyBbsReplyTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyBbsReplyTableController.h; sourceTree = "<group>"; };
-		AE1722631559470B0055A83D /* DemsyBbsReplyTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyBbsReplyTableController.m; sourceTree = "<group>"; };
-		AE1722651559473E0055A83D /* DemsyBbs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyBbs.h; sourceTree = "<group>"; };
-		AE1722661559473E0055A83D /* DemsyBbs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyBbs.m; sourceTree = "<group>"; };
+		AE17225C155946410055A83D /* DemsyBbsRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemsyBbsRootController.h; path = ../Controllers/DemsyBbsRootController.h; sourceTree = "<group>"; };
+		AE17225D155946410055A83D /* DemsyBbsRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemsyBbsRootController.m; path = ../Controllers/DemsyBbsRootController.m; sourceTree = "<group>"; };
+		AE17225F155946B50055A83D /* DemsyBbsTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemsyBbsTableController.h; path = ../Controllers/DemsyBbsTableController.h; sourceTree = "<group>"; };
+		AE172260155946B50055A83D /* DemsyBbsTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemsyBbsTableController.m; path = ../Controllers/DemsyBbsTableController.m; sourceTree = "<group>"; };
+		AE1722621559470B0055A83D /* DemsyBbsReplyTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemsyBbsReplyTableController.h; path = ../Controllers/DemsyBbsReplyTableController.h; sourceTree = "<group>"; };
+		AE1722631559470B0055A83D /* DemsyBbsReplyTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemsyBbsReplyTableController.m; path = ../Controllers/DemsyBbsReplyTableController.m; sourceTree = "<group>"; };
+		AE1722651559473E0055A83D /* DemsyBbs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemsyBbs.h; path = ../Models/DemsyBbs.h; sourceTree = "<group>"; };
+		AE1722661559473E0055A83D /* DemsyBbs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemsyBbs.m; path = ../Models/DemsyBbs.m; sourceTree = "<group>"; };
 		AE17226815594BB40055A83D /* DemsyBbsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyBbsTableCell.xib; sourceTree = "<group>"; };
 		AE17226A15594CF20055A83D /* DemsyOfficeRootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyOfficeRootView.xib; sourceTree = "<group>"; };
 		AE17226C15595B500055A83D /* DemsyMoreRootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyMoreRootView.xib; sourceTree = "<group>"; };
 		AE1D738C16F6093C008FE6D7 /* Three20.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Three20.bundle; path = "../../Open.iOS.Projects/three20-master/src/Three20.bundle"; sourceTree = "<group>"; };
-		AE83F1921558F14600C83433 /* DemsyTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyTableController.h; sourceTree = "<group>"; };
-		AE83F1931558F14600C83433 /* DemsyTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyTableController.m; sourceTree = "<group>"; };
+		AE83F1921558F14600C83433 /* DemsyTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemsyTableController.h; path = ../Controllers/DemsyTableController.h; sourceTree = "<group>"; };
+		AE83F1931558F14600C83433 /* DemsyTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemsyTableController.m; path = ../Controllers/DemsyTableController.m; sourceTree = "<group>"; };
 		AE842E251557BD8E00BBE1DC /* DemsyProductRootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyProductRootView.xib; sourceTree = "<group>"; };
 		AE842E281557BDAB00BBE1DC /* DemsyProductTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyProductTableView.xib; sourceTree = "<group>"; };
 		AE842E2A1557BDC200BBE1DC /* DemsyProductDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyProductDetailView.xib; sourceTree = "<group>"; };
-		AE842E2C1557BDEB00BBE1DC /* DemsyProductRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyProductRootController.h; sourceTree = "<group>"; };
-		AE842E2D1557BDEB00BBE1DC /* DemsyProductRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyProductRootController.m; sourceTree = "<group>"; };
-		AE842E2F1557BDFC00BBE1DC /* DemsyProductTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyProductTableController.h; sourceTree = "<group>"; };
-		AE842E301557BDFC00BBE1DC /* DemsyProductTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyProductTableController.m; sourceTree = "<group>"; };
-		AE842E321557BE0C00BBE1DC /* DemsyProductDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyProductDetailController.h; sourceTree = "<group>"; };
-		AE842E331557BE0C00BBE1DC /* DemsyProductDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyProductDetailController.m; sourceTree = "<group>"; };
-		AE842E381557BF7F00BBE1DC /* DemsyProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyProduct.h; sourceTree = "<group>"; };
-		AE842E391557BF7F00BBE1DC /* DemsyProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyProduct.m; sourceTree = "<group>"; };
+		AE842E2C1557BDEB00BBE1DC /* DemsyProductRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemsyProductRootController.h; path = ../Controllers/DemsyProductRootController.h; sourceTree = "<group>"; };
+		AE842E2D1557BDEB00BBE1DC /* DemsyProductRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemsyProductRootController.m; path = ../Controllers/DemsyProductRootController.m; sourceTree = "<group>"; };
+		AE842E2F1557BDFC00BBE1DC /* DemsyProductTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemsyProductTableController.h; path = ../Controllers/DemsyProductTableController.h; sourceTree = "<group>"; };
+		AE842E301557BDFC00BBE1DC /* DemsyProductTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemsyProductTableController.m; path = ../Controllers/DemsyProductTableController.m; sourceTree = "<group>"; };
+		AE842E321557BE0C00BBE1DC /* DemsyProductDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemsyProductDetailController.h; path = ../Controllers/DemsyProductDetailController.h; sourceTree = "<group>"; };
+		AE842E331557BE0C00BBE1DC /* DemsyProductDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemsyProductDetailController.m; path = ../Controllers/DemsyProductDetailController.m; sourceTree = "<group>"; };
+		AE842E381557BF7F00BBE1DC /* DemsyProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemsyProduct.h; path = ../Models/DemsyProduct.h; sourceTree = "<group>"; };
+		AE842E391557BF7F00BBE1DC /* DemsyProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemsyProduct.m; path = ../Models/DemsyProduct.m; sourceTree = "<group>"; };
 		AE842E3B1557CA4100BBE1DC /* DemsyProductTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyProductTableCell.xib; sourceTree = "<group>"; };
 		AE8A3015155A0EEB00E7BD53 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 		AE8A3016155A0EEB00E7BD53 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
@@ -283,22 +286,22 @@
 		AE9B2DAE155524D1005ABB10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AE9B2DB0155524D1005ABB10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AE9B2DB2155524D1005ABB10 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
-		AE9B2DB3155524D1005ABB10 /* DemsyAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemsyAppDelegate.h; sourceTree = "<group>"; };
-		AE9B2DB4155524D1005ABB10 /* DemsyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemsyAppDelegate.m; sourceTree = "<group>"; };
+		AE9B2DB3155524D1005ABB10 /* DemsyAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DemsyAppDelegate.h; path = ../iDemsyYnby/DemsyAppDelegate.h; sourceTree = "<group>"; };
+		AE9B2DB4155524D1005ABB10 /* DemsyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DemsyAppDelegate.m; path = ../iDemsyYnby/DemsyAppDelegate.m; sourceTree = "<group>"; };
 		AE9B2DBC15552501005ABB10 /* DemsyAsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyAsyncImageView.h; sourceTree = "<group>"; };
 		AE9B2DBD15552501005ABB10 /* DemsyAsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyAsyncImageView.m; sourceTree = "<group>"; };
 		AE9B2DBE15552501005ABB10 /* DemsyUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyUtils.h; sourceTree = "<group>"; };
 		AE9B2DBF15552501005ABB10 /* DemsyUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyUtils.m; sourceTree = "<group>"; };
-		AE9B2DC115552501005ABB10 /* DemsyAsynURLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyAsynURLController.h; sourceTree = "<group>"; };
-		AE9B2DC215552501005ABB10 /* DemsyAsynURLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyAsynURLController.m; sourceTree = "<group>"; };
-		AE9B2DC315552501005ABB10 /* DemsyWebInfoDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyWebInfoDetailController.h; sourceTree = "<group>"; };
-		AE9B2DC415552501005ABB10 /* DemsyWebInfoDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyWebInfoDetailController.m; sourceTree = "<group>"; };
-		AE9B2DC515552501005ABB10 /* DemsyWebInfoRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyWebInfoRootController.h; sourceTree = "<group>"; };
-		AE9B2DC615552501005ABB10 /* DemsyWebInfoRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyWebInfoRootController.m; sourceTree = "<group>"; };
-		AE9B2DC715552501005ABB10 /* DemsyWebInfoTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyWebInfoTableController.h; sourceTree = "<group>"; };
-		AE9B2DC815552501005ABB10 /* DemsyWebInfoTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyWebInfoTableController.m; sourceTree = "<group>"; };
-		AE9B2DCA15552501005ABB10 /* DemsyWebInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyWebInfo.h; sourceTree = "<group>"; };
-		AE9B2DCB15552501005ABB10 /* DemsyWebInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyWebInfo.m; sourceTree = "<group>"; };
+		AE9B2DC115552501005ABB10 /* DemsyAsynURLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemsyAsynURLController.h; path = ../Controllers/DemsyAsynURLController.h; sourceTree = "<group>"; };
+		AE9B2DC215552501005ABB10 /* DemsyAsynURLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemsyAsynURLController.m; path = ../Controllers/DemsyAsynURLController.m; sourceTree = "<group>"; };
+		AE9B2DC315552501005ABB10 /* DemsyWebInfoDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemsyWebInfoDetailController.h; path = ../Controllers/DemsyWebInfoDetailController.h; sourceTree = "<group>"; };
+		AE9B2DC415552501005ABB10 /* DemsyWebInfoDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemsyWebInfoDetailController.m; path = ../Controllers/DemsyWebInfoDetailController.m; sourceTree = "<group>"; };
+		AE9B2DC515552501005ABB10 /* DemsyWebInfoRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemsyWebInfoRootController.h; path = ../Controllers/DemsyWebInfoRootController.h; sourceTree = "<group>"; };
+		AE9B2DC615552501005ABB10 /* DemsyWebInfoRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemsyWebInfoRootController.m; path = ../Controllers/DemsyWebInfoRootController.m; sourceTree = "<group>"; };
+		AE9B2DC715552501005ABB10 /* DemsyWebInfoTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemsyWebInfoTableController.h; path = ../Controllers/DemsyWebInfoTableController.h; sourceTree = "<group>"; };
+		AE9B2DC815552501005ABB10 /* DemsyWebInfoTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemsyWebInfoTableController.m; path = ../Controllers/DemsyWebInfoTableController.m; sourceTree = "<group>"; };
+		AE9B2DCA15552501005ABB10 /* DemsyWebInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemsyWebInfo.h; path = ../Models/DemsyWebInfo.h; sourceTree = "<group>"; };
+		AE9B2DCB15552501005ABB10 /* DemsyWebInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemsyWebInfo.m; path = ../Models/DemsyWebInfo.m; sourceTree = "<group>"; };
 		AE9B2DCD15552501005ABB10 /* bbs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bbs.png; sourceTree = "<group>"; };
 		AE9B2DCE15552501005ABB10 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		AE9B2DCF15552501005ABB10 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -317,6 +320,12 @@
 		AE9B2DDD15552501005ABB10 /* DemsyWebInfoRootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyWebInfoRootView.xib; sourceTree = "<group>"; };
 		AE9B2DDE15552501005ABB10 /* DemsyWebInfoTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyWebInfoTableCell.xib; sourceTree = "<group>"; };
 		AE9B2DDF15552501005ABB10 /* DemsyWebInfoTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemsyWebInfoTableView.xib; sourceTree = "<group>"; };
+		AEB9D1A31735870300238025 /* DemsyAppDelegate2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyAppDelegate2.h; sourceTree = "<group>"; };
+		AEB9D1A41735870300238025 /* DemsyAppDelegate2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyAppDelegate2.m; sourceTree = "<group>"; };
+		AEB9D1A617358A0900238025 /* DemsyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyTabBarController.h; sourceTree = "<group>"; };
+		AEB9D1A717358A0900238025 /* DemsyTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyTabBarController.m; sourceTree = "<group>"; };
+		AEB9D1A91735A2D300238025 /* DemsyMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemsyMenuController.h; sourceTree = "<group>"; };
+		AEB9D1AA1735A2D300238025 /* DemsyMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemsyMenuController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,6 +449,7 @@
 		AE9B2D95155524D1005ABB10 = {
 			isa = PBXGroup;
 			children = (
+				AEB9D1A21735867000238025 /* Classes2 */,
 				AE1D738C16F6093C008FE6D7 /* Three20.bundle */,
 				AE98771216F480E600DE10E6 /* Three20Core.xcodeproj */,
 				AE98771316F480E600DE10E6 /* Three20Network.xcodeproj */,
@@ -451,9 +461,7 @@
 				AE8A3013155A0EAC00E7BD53 /* Libs */,
 				AE9B2DCC15552501005ABB10 /* Resources */,
 				AE9B2DBB15552501005ABB10 /* Classes */,
-				AE9B2DC915552501005ABB10 /* Models */,
 				AE9B2DDA15552501005ABB10 /* Views */,
-				AE9B2DC015552501005ABB10 /* Controllers */,
 				AE9B2DAA155524D1005ABB10 /* iDemsyYnby */,
 				AE9B2DA3155524D1005ABB10 /* Frameworks */,
 				AE9B2DA1155524D1005ABB10 /* Products */,
@@ -482,8 +490,6 @@
 		AE9B2DAA155524D1005ABB10 /* iDemsyYnby */ = {
 			isa = PBXGroup;
 			children = (
-				AE9B2DB3155524D1005ABB10 /* DemsyAppDelegate.h */,
-				AE9B2DB4155524D1005ABB10 /* DemsyAppDelegate.m */,
 				AE9B2DAB155524D1005ABB10 /* Supporting Files */,
 			);
 			path = iDemsyYnby;
@@ -503,17 +509,8 @@
 		AE9B2DBB15552501005ABB10 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				AE9B2DBC15552501005ABB10 /* DemsyAsyncImageView.h */,
-				AE9B2DBD15552501005ABB10 /* DemsyAsyncImageView.m */,
-				AE9B2DBE15552501005ABB10 /* DemsyUtils.h */,
-				AE9B2DBF15552501005ABB10 /* DemsyUtils.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		AE9B2DC015552501005ABB10 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
+				AE9B2DB3155524D1005ABB10 /* DemsyAppDelegate.h */,
+				AE9B2DB4155524D1005ABB10 /* DemsyAppDelegate.m */,
 				AE9B2DC115552501005ABB10 /* DemsyAsynURLController.h */,
 				AE9B2DC215552501005ABB10 /* DemsyAsynURLController.m */,
 				AE1722621559470B0055A83D /* DemsyBbsReplyTableController.h */,
@@ -536,21 +533,18 @@
 				AE9B2DC615552501005ABB10 /* DemsyWebInfoRootController.m */,
 				AE9B2DC715552501005ABB10 /* DemsyWebInfoTableController.h */,
 				AE9B2DC815552501005ABB10 /* DemsyWebInfoTableController.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		AE9B2DC915552501005ABB10 /* Models */ = {
-			isa = PBXGroup;
-			children = (
 				AE842E381557BF7F00BBE1DC /* DemsyProduct.h */,
 				AE842E391557BF7F00BBE1DC /* DemsyProduct.m */,
 				AE9B2DCA15552501005ABB10 /* DemsyWebInfo.h */,
 				AE9B2DCB15552501005ABB10 /* DemsyWebInfo.m */,
 				AE1722651559473E0055A83D /* DemsyBbs.h */,
 				AE1722661559473E0055A83D /* DemsyBbs.m */,
+				AE9B2DBC15552501005ABB10 /* DemsyAsyncImageView.h */,
+				AE9B2DBD15552501005ABB10 /* DemsyAsyncImageView.m */,
+				AE9B2DBE15552501005ABB10 /* DemsyUtils.h */,
+				AE9B2DBF15552501005ABB10 /* DemsyUtils.m */,
 			);
-			path = Models;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		AE9B2DCC15552501005ABB10 /* Resources */ = {
@@ -593,6 +587,19 @@
 				AE17226C15595B500055A83D /* DemsyMoreRootView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AEB9D1A21735867000238025 /* Classes2 */ = {
+			isa = PBXGroup;
+			children = (
+				AEB9D1A31735870300238025 /* DemsyAppDelegate2.h */,
+				AEB9D1A41735870300238025 /* DemsyAppDelegate2.m */,
+				AEB9D1A617358A0900238025 /* DemsyTabBarController.h */,
+				AEB9D1A717358A0900238025 /* DemsyTabBarController.m */,
+				AEB9D1A91735A2D300238025 /* DemsyMenuController.h */,
+				AEB9D1AA1735A2D300238025 /* DemsyMenuController.m */,
+			);
+			name = Classes2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -851,6 +858,9 @@
 				AE1722641559470B0055A83D /* DemsyBbsReplyTableController.m in Sources */,
 				AE1722671559473E0055A83D /* DemsyBbs.m in Sources */,
 				AE8A3017155A0EEB00E7BD53 /* EGORefreshTableHeaderView.m in Sources */,
+				AEB9D1A51735870300238025 /* DemsyAppDelegate2.m in Sources */,
+				AEB9D1A817358A0900238025 /* DemsyTabBarController.m in Sources */,
+				AEB9D1AB1735A2D300238025 /* DemsyMenuController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
